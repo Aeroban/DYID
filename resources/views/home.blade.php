@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>This is our new homepage</h1>
+    <iframe src="https://public.tableau.com/views/4-ClothingRetail/Story1?:language=en-US&:display_count=n&:origin=viz_share_link:showVizHome=no&:embed=true"
+ width="1000" height="800"></iframe>
 </body>
 </html>
