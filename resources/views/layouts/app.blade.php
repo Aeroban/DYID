@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>DYID</title>
+    <style>
+        /* We will move this to scss later */
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+
+    </style>
+    @yield('style')
 </head>
 <body>
     
@@ -15,7 +26,9 @@
 </header>
 
 {{-- yield to get content from another page --}}
-@yield('content') 
+<div class="content">
+    @yield('content') 
+</div>
 
 {{-- Footer --}}
 <footer>

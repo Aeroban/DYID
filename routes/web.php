@@ -39,6 +39,4 @@ use App\Http\Controllers\PagesController;
 //Named routes
 //Route::get('/products',[ProductsController::class, 'show_index'])->name('products');
 
-Route::get('/',[PagesController::class,'index']);
-Route::get('/about',[PagesController::class,'about']);
-Route::get('/loop',[PagesController::class,'loopPage']); 
+Route::get('/',[PagesController::class,'showIndex']);

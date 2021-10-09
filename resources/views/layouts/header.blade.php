@@ -1,5 +1,21 @@
-<h1>This is a header</h1>
-{{-- If the request is to go to index, then make class = active --}}
-<a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a> 
-{{-- If the request is to go to about, then make this class = active/{subpage} --}}
-<a href="about" class="{{ request()->is('about/*') ? 'active' : '' }}">About</a>
+<div class="header">
+    <div class="header-top">
+        <img src="{{ asset('/images/logo.png')}}" alt="">
+        <form action="">
+            <input type="text" placeholder=" Search product...">
+            <input type="submit" value="">
+        </form>
+    </div>
+    <div class="header-bot">
+        <ul>
+            
+            <li><a href="index"><strong>Home</strong></a></li>
+            <div class="header-bot-button">
+                <li class=""><a href="" >Login</a></li>
+                <li class=""><a href="" >Register</a></li>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ asset('css/header.css')}}">
