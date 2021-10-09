@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +15,13 @@ use App\Http\Controllers\ProductsController;
 */
 
 //End point of / and passing a function that return view of home <using function>
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-//Laravel 8 - We have an endpoint /products, and we pass a controller and perform index funciton in the controller class <using controller>
-Route::get('/products', [ProductsController::class, 'index']);
-
-Route::get('/products/about',[ProductsController::class, 'about']);
+//Laravel 8 - We have an endpoint /products, and we pass a controller and perform index function in the controller class <using controller>
+// Route::get('/products', [ProductsController::class, 'index']);
+// Route::get('/products/about',[ProductsController::class, 'about']);
 
 //Laravel 8 - go to the selected path and use index function (separated by file@function)<using path>
 // Route::get('/products', 'App\Http\Controllers\ProductsController@index');
@@ -31,10 +30,15 @@ Route::get('/products/about',[ProductsController::class, 'about']);
 //Make sure it is only an integer using regex ->where('grabbed variable',regex)
 // Route::get('/products/{name}', 
 //     [ProductsController::class, 'show'])->where('name', '[0-9]+');
+// Route::get('/products/{name}/{id}', 
+//     [ProductsController::class, 'show'])->where([
+//         'name' => '[a-z]+',
+//         'id' => '[0-9]+'
+//     ]);
 
-Route::get('/products/{name}/{id}', 
-    [ProductsController::class, 'show'])->where([
-        'name' => '[a-z]+',
-        'id' => '[0-9]+'
-    ]);
+//Named routes
+//Route::get('/products',[ProductsController::class, 'show_index'])->name('products');
 
+Route::get('/',[PagesController::class,'index']);
+Route::get('/about',[PagesController::class,'about']);
+Route::get('/loop',[PagesController::class,'loopPage']); 
