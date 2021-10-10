@@ -19333,6 +19333,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/insert_category.scss":
+/*!*********************************************!*\
+  !*** ./resources/scss/insert_category.scss ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/app.scss":
 /*!*********************************!*\
   !*** ./resources/scss/app.scss ***!
@@ -19719,6 +19732,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 			"css/footer": 0,
 /******/ 			"css/header": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/insert_category": 0,
 /******/ 			"css/edit_product": 0,
 /******/ 			"css/insert_new_product": 0
 /******/ 		};
@@ -19770,14 +19784,15 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/header.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/footer.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/register.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/login.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/insert_new_product.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/edit_product.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/header.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/footer.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/register.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/login.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/insert_new_product.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/edit_product.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/login","css/register","css/footer","css/header","css/app","css/insert_category","css/edit_product","css/insert_new_product"], () => (__webpack_require__("./resources/scss/insert_category.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

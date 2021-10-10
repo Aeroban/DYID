@@ -25,4 +25,8 @@ class PagesController extends Controller
     public function showEditProduct(){
         return view('edit_new_product');
     }
+
+    public function showInsertCategory(){
+        return view('insert_category');
+    }
 }
