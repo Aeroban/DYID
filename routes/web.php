@@ -47,3 +47,4 @@ Route::get('/login', [PagesController::class,'showLogin']);
 Route::get('/insert_product', [PagesController::class,'showInsertProduct']);
 Route::get('/edit_product', [PagesController::class,'showEditProduct']);
 Route::get('/insert_category', [PagesController::class,'showInsertCategory']);
+Route::get('/testing', [PagesController::class,'showTest']);

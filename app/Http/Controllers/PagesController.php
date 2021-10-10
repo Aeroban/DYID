@@ -29,4 +29,8 @@ class PagesController extends Controller
     public function showInsertCategory(){
         return view('insert_category');
     }
+
+    public function showTest(){
+        return view ('testing');
+    }
 }

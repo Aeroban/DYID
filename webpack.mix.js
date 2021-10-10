@@ -20,4 +20,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/scss/insert_new_product.scss', 'public/css')
     .sass('resources/scss/edit_product.scss', 'public/css')
     .sass('resources/scss/insert_category.scss', 'public/css')
+    
 
