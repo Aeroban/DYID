@@ -9,8 +9,8 @@
             <input type="password" name="" id="" placeholder="Password">
 
             <div class="login-form-remember">
-                <input type="checkbox" name="" id="">
-                <label for="">Remember me</label>
+                <input type="checkbox" name="login_remember" id="login_remember">
+                <label for="login_remember">Remember me</label>
             </div>
             
             <input type="submit" value="Login">

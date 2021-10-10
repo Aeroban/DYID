@@ -1,4 +1,4 @@
-.register{
+.edit_product{
     display: flex;
     width: 100vw;
     align-items: center;
@@ -22,23 +22,19 @@
             padding: 0px 30px 30px 30px;
             margin-top: 0px;
         
-            input{
+            input:not([type=file]),select{
                 margin-bottom: 20px;
             }
         
-            input[type=text],[type=password]{
+            input[type=text],[type=password],[type=number],select,option{
                 font-size: 1.05rem;
                 padding: 10px 0px 10px 0px;
-            }
-
-            input[type=radio]{
-                margin-top: 10px;
             }
 
             input[type=submit]{
                 width: calc(1.05rem * 6);
                 position: relative;
-                left: calc(100% - 110px);
+                left: calc(100% - 100px);
                 background-color: #FFE74C;
                 color: black;
                 border: none;
@@ -49,7 +45,7 @@
             label{
                 font-size: 1.05rem;
                 font-weight: medium;
-                
+                margin-bottom: 10px;
             }
 
             textarea{
@@ -57,6 +53,24 @@
                 text-wrap: soft;
                 padding: 10px 0px 10px 0px;
                 font-size: 1.05rem;
+            }
+
+            input[type=file]{
+                border:solid grey thin;
+                border-radius: 2px;
+                font-size: 1.05rem;
+            }
+
+            input[type=file]::file-selector-button{
+                background-color: rgb(235, 235, 235);
+                border:none;
+                height: calc(1.05rem + 20px)
+            }
+
+            p{
+                font-size: 1rem;
+                padding:0px;
+                margin:0px;
             }
         }
 

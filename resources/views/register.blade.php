@@ -21,8 +21,8 @@
             <input type="password" name="" id="" placeholder="Confirm password">
 
             <div class="register-form-agree">
-                <input type="checkbox" name="" id="">
-                <label for="">I agree with terms & conditions</label>
+                <input type="checkbox" name="reg_agree" id="reg_agree">
+                <label for="reg_agree">I agree with terms & conditions</label>
             </div>
             
             <input type="submit" value="Register Now">
