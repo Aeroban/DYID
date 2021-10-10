@@ -40,3 +40,5 @@ use App\Http\Controllers\PagesController;
 //Route::get('/products',[ProductsController::class, 'show_index'])->name('products');
 
 Route::get('/',[PagesController::class,'showIndex']);
+Route::get('/register',[PagesController::class,'showRegister']);
+Route::get('/login', [PagesController::class,'showLogin']);

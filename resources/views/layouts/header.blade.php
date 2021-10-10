@@ -9,10 +9,10 @@
     <div class="header-bot">
         <ul>
             
-            <li><a href="index"><strong>Home</strong></a></li>
+            <li><a href="/"><strong>Home</strong></a></li>
             <div class="header-bot-button">
-                <li class=""><a href="" >Login</a></li>
-                <li class=""><a href="" >Register</a></li>
+                <li class=""><a href="login" >Login</a></li>
+                <li class=""><a href="register" >Register</a></li>
             </div>
         </ul>
     </div>

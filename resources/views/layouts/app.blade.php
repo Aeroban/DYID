@@ -12,7 +12,21 @@
             height: 100%;
             margin: 0px;
             padding: 0px;
-            overflow-x: hidden;
+            min-height: 100%;
+            overflow-x:hidden;
+        }
+
+        body{
+            background-color: rgb(235, 235, 235);
+        }
+
+        footer,header, .content{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .content{
+            min-height: calc(100vh - 137px - 114px);
         }
 
     </style>
