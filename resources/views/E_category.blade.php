@@ -5,7 +5,10 @@
     <div class="edit-form">
         <p>Edit Category</p>
         <form action="">
-            <input type="text" name="" id="" placeholder="Category name">
+            <select name="Category" id="Category" class="Category" style="width:700px; height: 40px;">
+                <option value="Phone">Phone</option>
+                <option value="Television">Television</option>
+            </select>
     
             <input type="submit" value="add">
             

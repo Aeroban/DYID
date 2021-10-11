@@ -38,6 +38,7 @@
     border: none;
     padding: 10px 0px 10px 0px;
     border-radius: 5px;
+    margin-top: 5%;
   }
   .edit-form form label {
     font-size: 1.05rem;
