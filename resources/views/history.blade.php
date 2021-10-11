@@ -26,7 +26,7 @@
         <div class="panel-body">
             <div class="table">
                 <div class="image">
-                    <img src="{{ asset('/images/logo.png')}}" alt="">
+                    <img src="{{ asset('/storage/iphonex.png')}}" alt="">
                 </div>
                 <div class="desc">
                     Iphonec XR  
