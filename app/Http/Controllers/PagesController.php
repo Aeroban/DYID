@@ -41,4 +41,8 @@ class PagesController extends Controller
     public function showManageCategory(){
         return view ('ManageCategory');
     }
+
+    public function showViewProductList(){
+        return view ('ViewProductList');
+    }
 }
