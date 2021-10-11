@@ -65,5 +65,9 @@ class PagesController extends Controller
     public function showCart(){
         return view('cart');
     }
+
+    public function showEditCart(){
+        return view('edit_cart');
+    }
 }
 

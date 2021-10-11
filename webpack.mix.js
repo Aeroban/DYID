@@ -23,5 +23,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/scss/home.scss', 'public/css')
     .sass('resources/scss/search.scss', 'public/css')
     .sass('resources/scss/cart.scss', 'public/css')
+    .sass('resources/scss/edit_cart.scss', 'public/css')
     
 

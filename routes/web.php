@@ -63,5 +63,6 @@ Route::get('/home', [PagesController::class,'showHome']);
 Route::get('/search', [PagesController::class,'showSearch']);
 
 Route::get('/cart', [PagesController::class,'showCart']);
+Route::get('/edit_cart', [PagesController::class,'showEditCart']);
 
 
