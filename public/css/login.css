@@ -30,7 +30,8 @@
   padding: 10px 0px 10px 0px;
 }
 .login-form form input[type=submit] {
-  width: 5.25rem;
+  width: 5rem;
+  font-size: 1rem;
   position: relative;
   left: calc(100% - 90px);
   background-color: #FFE74C;

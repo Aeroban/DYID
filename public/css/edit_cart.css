@@ -40,7 +40,8 @@
   width: 50px;
 }
 .edit_cart-right input[type=submit] {
-  width: 4.2rem;
+  font-size: 1rem;
+  width: 4rem;
   background-color: #FFE74C;
   color: black;
   border: none;

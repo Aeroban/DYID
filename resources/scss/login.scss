@@ -32,7 +32,8 @@
             }
 
             input[type=submit]{
-                width: calc(1.05rem * 5);
+                width: calc(1rem * 5);
+                font-size: 1rem;
                 position: relative;
                 left: calc(100% - 90px);
                 background-color: #FFE74C;
