@@ -9,7 +9,7 @@
     <div class="header-bot">
         <ul>
             
-            <li><a href="home"><strong>Home</strong></a></li>
+            <li><a href="home">Home</a></li>
             <div class="header-bot-button">
                 <li class=""><a href="login" >Login</a></li>
                 <li class=""><a href="register" >Register</a></li>
