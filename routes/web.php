@@ -49,3 +49,4 @@ Route::get('/edit_product', [PagesController::class,'showEditProduct']);
 Route::get('/insert_category', [PagesController::class,'showInsertCategory']);
 Route::get('/testing', [PagesController::class,'showTest']);
 Route::get('/E_category', [PagesController::class,'showEditCategory']);
+Route::get('/ManageCategory', [PagesController::class,'showManageCategory']);

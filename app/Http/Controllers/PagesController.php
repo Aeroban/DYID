@@ -37,4 +37,8 @@ class PagesController extends Controller
     public function showEditCategory(){
         return view ('E_category');
     }
+
+    public function showManageCategory(){
+        return view ('ManageCategory');
+    }
 }
