@@ -1,0 +1,31 @@
+.TableForContent{
+    display: flex;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+}
+
+.image{
+    /* background-color: aliceblue; */
+    height: 700px;
+    width: 100%;
+}
+
+.textDescript{
+    height: 700px;
+    width: 100%;
+
+}
+
+.Login{
+    background-color: #ffc400;
+    color: black;
+    border: none;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,3 +1,11 @@
+tr:nth-of-type(odd){
+    background-color: rgb(241, 245, 18);
+}
+
+tr:nth-of-type(even){
+    background-color: rgb(154, 156, 20);
+}
+
 table, th, td {
     border:1px solid black;
   }

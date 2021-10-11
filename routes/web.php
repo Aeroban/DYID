@@ -51,3 +51,4 @@ Route::get('/testing', [PagesController::class,'showTest']);
 Route::get('/E_category', [PagesController::class,'showEditCategory']);
 Route::get('/ManageCategory', [PagesController::class,'showManageCategory']);
 Route::get('/ViewProductList', [PagesController::class,'showViewProductList']);
+Route::get('/DetailProductPage', [PagesController::class,'showDetailProductPage']);

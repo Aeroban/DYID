@@ -45,4 +45,8 @@ class PagesController extends Controller
     public function showViewProductList(){
         return view ('ViewProductList');
     }
+
+    public function showDetailProductPage(){
+        return view ('DetailProductPage');
+    }
 }

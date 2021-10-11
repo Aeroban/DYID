@@ -21,7 +21,7 @@
         </tr>
         <tr>
             <th scope="row">1</th>
-            <th scope="row">image disini</th>
+            <th scope="row"><img src="{{ asset('/images/logo.png')}}" alt=""></th>
             <th scope="row">samsung 32</th>
             <th scope="row">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat commodi reprehenderit esse animi sed, voluptas repudiandae rerum voluptates officiis aspernatur unde libero iusto ex culpa? Optio accusantium repellat quidem assumenda.</th>
             <th scope="row">320000</th>
