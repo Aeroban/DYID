@@ -18,6 +18,7 @@
 
         body{
             background-color: rgb(235, 235, 235);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         footer,header, .content{

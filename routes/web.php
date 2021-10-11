@@ -47,9 +47,21 @@ Route::get('/login', [PagesController::class,'showLogin']);
 Route::get('/insert_product', [PagesController::class,'showInsertProduct']);
 Route::get('/edit_product', [PagesController::class,'showEditProduct']);
 Route::get('/insert_category', [PagesController::class,'showInsertCategory']);
+
 Route::get('/testing', [PagesController::class,'showTest']);
+
 Route::get('/E_category', [PagesController::class,'showEditCategory']);
 Route::get('/ManageCategory', [PagesController::class,'showManageCategory']);
+
 Route::get('/ViewProductList', [PagesController::class,'showViewProductList']);
+
 Route::get('/DetailProductPage', [PagesController::class,'showDetailProductPage']);
+
 Route::get('/history', [PagesController::class,'showhistory']);
+
+Route::get('/home', [PagesController::class,'showHome']);
+Route::get('/search', [PagesController::class,'showSearch']);
+
+Route::get('/cart', [PagesController::class,'showCart']);
+
+
