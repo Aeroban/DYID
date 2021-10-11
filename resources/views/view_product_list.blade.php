@@ -38,5 +38,5 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset("css/ViewProductList.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/view_product_list.css") }}">
 @endsection
