@@ -40,6 +40,10 @@
     width: 90%;
 }
 
+.desc-peace{
+  margin-top: 10px;
+}
+
 .price{
     position: relative;
     text-align:right;

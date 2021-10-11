@@ -57,7 +57,7 @@ Route::get('/ViewProductList', [PagesController::class,'showViewProductList']);
 
 Route::get('/DetailProductPage', [PagesController::class,'showDetailProductPage']);
 
-Route::get('/history', [PagesController::class,'showhistory']);
+Route::get('/history', [PagesController::class,'showHistory']);
 
 Route::get('/home', [PagesController::class,'showHome']);
 Route::get('/search', [PagesController::class,'showSearch']);

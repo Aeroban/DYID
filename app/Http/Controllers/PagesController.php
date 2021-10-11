@@ -35,19 +35,19 @@ class PagesController extends Controller
     }
 
     public function showEditCategory(){
-        return view ('E_category');
+        return view ('edit_category');
     }
 
     public function showManageCategory(){
-        return view ('ManageCategory');
+        return view ('manage_category');
     }
 
     public function showViewProductList(){
-        return view ('ViewProductList');
+        return view ('view_product_list');
     }
 
     public function showDetailProductPage(){
-        return view ('DetailProductPage');
+        return view ('detail_product_page');
     }
 
     public function showhistory(){
