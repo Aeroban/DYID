@@ -1,7 +1,18 @@
 @extends('layouts/app')
 
 @section('content')
-    <h1>Ini udah jadi</h1>
+<div class="insert">
+    <div class="insert-form">
+        <p>Insert New Category</p>
+        <form action="">
+            <input type="text" name="" id="" placeholder="Category name">
+    
+            <input type="submit" value="add">
+            
+        </form>
+    </div>
+</div>
+
 @endsection
 
 @section('style')
