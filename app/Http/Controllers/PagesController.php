@@ -49,4 +49,9 @@ class PagesController extends Controller
     public function showDetailProductPage(){
         return view ('DetailProductPage');
     }
+
+    public function showhistory(){
+        return view ('history');
+    }
 }
+
