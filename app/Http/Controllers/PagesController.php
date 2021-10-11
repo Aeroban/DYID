@@ -33,4 +33,8 @@ class PagesController extends Controller
     public function showTest(){
         return view ('testing');
     }
+
+    public function showEditCategory(){
+        return view ('E_category');
+    }
 }
