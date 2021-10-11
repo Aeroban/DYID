@@ -29,5 +29,5 @@
 
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset("css/DetailProductPage.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/detail_product_page.css") }}">
 @endsection

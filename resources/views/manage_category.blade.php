@@ -23,5 +23,5 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset("css/ManageCategory.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/manage_category.css") }}">
 @endsection

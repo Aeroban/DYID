@@ -50,7 +50,7 @@ class PagesController extends Controller
         return view ('detail_product_page');
     }
 
-    public function showhistory(){
+    public function showHistory(){
         return view ('history');
     }
 

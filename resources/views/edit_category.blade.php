@@ -19,5 +19,5 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset("css/E_category.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/edit_category.css") }}">
 @endsection
