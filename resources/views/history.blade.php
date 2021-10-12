@@ -33,8 +33,9 @@
                     <sup>
                       IDR 11.000.000  
                     </sup>
-                    <br>
-                    X2pcs
+                    <div class="peace">
+                        X2pcs
+                    </div>
                 </div>
                 <div class="price">
                     IDR 11.000.000
