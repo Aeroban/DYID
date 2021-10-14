@@ -16,6 +16,7 @@ class CreateTransactionProductsTable extends Migration
         Schema::create('transaction_products', function (Blueprint $table) {
             $table->unsignedInteger('transaction_id');
             $table->unsignedInteger('product_id');
+            $table->integer('quantity');
 
             $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
