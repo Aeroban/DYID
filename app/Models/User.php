@@ -18,9 +18,11 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'fullname',
         'email',
         'password',
+        'gender',
+        'address'
     ];
 
     /**
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // users 1 - 0|1 carts
+    public function cart(){
+        return $this->hasOne(Cart::class);
+    }
+
+    // users 1 - 0|* transactions
+    public function transaction(){
+        return $this->hasMany(Transcation::class);
+    }
 }
