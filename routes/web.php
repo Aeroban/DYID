@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,5 +65,10 @@ Route::get('/search', [PagesController::class,'showSearch']);
 
 Route::get('/cart', [PagesController::class,'showCart']);
 Route::get('/edit_cart', [PagesController::class,'showEditCart']);
+
+// Database testing
+Route::resource('/users', UsersController::class);
+
+
 
 
