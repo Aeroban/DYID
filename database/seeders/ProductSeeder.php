@@ -34,7 +34,27 @@ class ProductSeeder extends Seeder
             'description' => 'This is Rog Strix G15',
             'price' => 22000000,
             'category_id' => 3,
-            'image'=> 'rogstrixg15.jpg']
+            'image'=> 'rogstrixg15.jpg'],
+            ['name' => 'Legion 7',
+            'description' => 'This is Legion 7',
+            'price' => 18000000,
+            'category_id' => 3,
+            'image'=> 'legion7.jpg'],
+            ['name' => 'Asus Zen Book 14',
+            'description' => 'This is Asus Zen Book 14',
+            'price' => 15000000,
+            'category_id' => 3,
+            'image'=> 'asuszenbook14.jpg'],
+            ['name' => 'LG 43 FHD',
+            'description' => 'This is LG 43 FHD',
+            'price' => 20000000,
+            'category_id' => 1,
+            'image'=> 'lg43fhd.jpg'],
+            ['name' => 'Galaxy Tab 6 Lite',
+            'description' => 'This is Galaxy Tab 6 Lite',
+            'price' => 9000000,
+            'category_id' => 2,
+            'image'=> 'galaxytab6lite.jpg']
         ];
         
         foreach ($data_list as $data) {

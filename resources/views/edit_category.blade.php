@@ -4,14 +4,13 @@
 <div class="edit">
     <div class="edit-form">
         <p>Edit Category</p>
-        <form action="">
-            <select name="Category" id="Category" class="Category" style="width:700px; height: 40px;">
-                <option value="Phone">Phone</option>
-                <option value="Television">Television</option>
-            </select>
+        <form action="/edit_category/{{$data->id}}" method="POST">
+            @csrf
+            @method('PUT')
+
+            <input type="text" name="name" id="" value="{{$data->name}}">
     
-            <input type="submit" value="add">
-            
+            <button type="submit">update</button>
         </form>
     </div>
 </div>

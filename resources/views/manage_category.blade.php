@@ -11,14 +11,21 @@
             <th scope="col">Category Name</th>
             <th scope="col">Action</th>
         </tr>
-        <tr>
-            <th scope="row">1</th>
-            <th scope="row">Television</th>
-            <th scope="row">
-                <button class="Update">Update</button>
-                <button class="Delete">Delete</button>
-            </th>
-        </tr>
+        @foreach ($data as $category)
+            <tr>
+                <th scope="row">{{$category->id}}</th>
+                <th scope="row">{{$category->name}}</th>
+                <th scope="row">
+                    <a href="edit_category/{{$category->id}}">Update</a> 
+
+                    <form action="delete_category/{{$category->id}}" method="POST">
+                        @csrf
+                        @method("delete")
+                        <button type = "submit" class="Delete">Delete</button>
+                    </form>
+                </th>
+            </tr>
+        @endforeach
     </table>
 @endsection
 

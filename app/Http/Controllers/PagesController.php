@@ -54,10 +54,6 @@ class PagesController extends Controller
         return view ('history');
     }
 
-    public function showHome(){
-        return view('home');
-    }
-
     public function showSearch(){
         return view('search');
     }

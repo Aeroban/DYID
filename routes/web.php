@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 
 /*
@@ -51,16 +53,19 @@ Route::get('/insert_category', [PagesController::class,'showInsertCategory']);
 
 Route::get('/testing', [PagesController::class,'showTest']);
 
-Route::get('/Edit_category', [PagesController::class,'showEditCategory']);
-Route::get('/ManageCategory', [PagesController::class,'showManageCategory']);
+//Categories
+Route::get('/edit_category/{id}', [CategoriesController::class,'showEditCategory']);
+Route::put('/edit_category/{id}', [CategoriesController::class,'update']);
+Route::delete('/delete_category/{id}', [CategoriesController::class,'delete']);
+Route::get('/manage_category', [CategoriesController::class,'showManageCategory']);
 
-Route::get('/ViewProductList', [PagesController::class,'showViewProductList']);
+Route::get('/view_product_list', [PagesController::class,'showViewProductList']);
 
 Route::get('/DetailProductPage', [PagesController::class,'showDetailProductPage']);
 
 Route::get('/history', [PagesController::class,'showHistory']);
 
-Route::get('/home', [PagesController::class,'showHome']);
+Route::get('/home', [ProductsController::class,'showHome']);
 Route::get('/search', [PagesController::class,'showSearch']);
 
 Route::get('/cart', [PagesController::class,'showCart']);

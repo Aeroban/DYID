@@ -4,23 +4,24 @@
     <p class="title">New Products</p>
 
     <div class="gallery">
-        @for ($i = 0; $i < 6; $i++)
+        @foreach($data as $product)
         <div class="gallery-item">
             <div class="gallery-item-top">
                 <img src="{{ asset("storage/LGFHDTVSignage.png") }}" alt="">
             </div>
             <div class="gallery-item-bot">
                 <div class="gallery-item-bot-title">
-                    <p class="gallery-item-bot-title-product">LG 43 FHD TV Signage</p>
-                    <p class="gallery-item-bot-title-category">Television</p>
+                    <p class="gallery-item-bot-title-product">{{$product->name}}</p>
+                    <p class="gallery-item-bot-title-category">{{$product->category->name}}</p>
                 </div>
-                <p class="gallery-item-bot-price"> IDR 8,500,000 </p>
+                <p class="gallery-item-bot-price"> IDR {{number_format($product->price, 0, ',')}} </p>
                 <button class="gallery-item-bot-more">More Detail</button>
             </div>
         </div>
-        @endfor
-        
+        @endforeach
     </div>
+
+    {{ $data->links() }}
 @endsection
 
 @section('style')
