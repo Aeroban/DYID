@@ -26,20 +26,8 @@ class PagesController extends Controller
         return view('edit_new_product');
     }
 
-    public function showInsertCategory(){
-        return view('insert_category');
-    }
-
     public function showTest(){
         return view ('testing');
-    }
-
-    public function showEditCategory(){
-        return view ('edit_category');
-    }
-
-    public function showManageCategory(){
-        return view ('manage_category');
     }
 
     public function showViewProductList(){

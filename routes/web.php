@@ -49,7 +49,6 @@ Route::get('/login', [PagesController::class,'showLogin']);
 
 Route::get('/insert_product', [PagesController::class,'showInsertProduct']);
 Route::get('/edit_product', [PagesController::class,'showEditProduct']);
-Route::get('/insert_category', [PagesController::class,'showInsertCategory']);
 
 Route::get('/testing', [PagesController::class,'showTest']);
 
@@ -57,6 +56,8 @@ Route::get('/testing', [PagesController::class,'showTest']);
 Route::get('/edit_category/{id}', [CategoriesController::class,'showEditCategory']);
 Route::put('/edit_category/{id}', [CategoriesController::class,'update']);
 Route::delete('/delete_category/{id}', [CategoriesController::class,'delete']);
+Route::get('/insert_category', [CategoriesController::class,'showInsertCategory']);
+Route::post('/insert_category', [CategoriesController::class,'store']);
 Route::get('/manage_category', [CategoriesController::class,'showManageCategory']);
 
 Route::get('/view_product_list', [PagesController::class,'showViewProductList']);

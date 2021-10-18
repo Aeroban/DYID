@@ -4,14 +4,24 @@
 <div class="insert">
     <div class="insert-form">
         <p>Insert New Category</p>
-        <form action="">
-            <input type="text" name="" id="" placeholder="Category name">
-    
+        <form action="/insert_category" method="POST">
+            @csrf
+
+            <input type="text" name="name" id="" placeholder="Category name">
             <input type="submit" value="add">
-            
         </form>
     </div>
+
+    @if ($errors->any())
+        <div class="">
+            {{-- Loop over ALL errors --}}
+            @foreach ($errors->all() as $error)
+                <li style="color: red">{{$error}}</li>
+            @endforeach
+        </div>
+    @endif
 </div>
+
 
 @endsection
 

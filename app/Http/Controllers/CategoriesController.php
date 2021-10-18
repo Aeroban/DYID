@@ -27,6 +27,22 @@ class CategoriesController extends Controller
         return redirect('manage_category');
     }
 
+    public function showInsertCategory(){
+        return view('insert_category');
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required|unique:categories|min:2'
+        ]);
+
+        $new_category = Category::create([
+            'name' => $request->input('name')
+        ]);
+
+        return redirect('manage_category');
+    }
+
     public function delete($id){
         $data = Category::find($id);
         $data->delete();
