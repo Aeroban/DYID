@@ -26,7 +26,13 @@ class UserSeeder extends Seeder
             'address' => 'Also in US of course',
             'email' => 'hillary_c@gmail.com',
             'password' => 'qwerty',
-            'role' => 0]
+            'role' => 0],
+            ['fullname' => 'Omega', 
+            'gender' => 'Female',
+            'address' => 'Somewhere watching the universe',
+            'email' => 'omega@gmail.com',
+            'password' => 'omega3',
+            'role' => 1]
         ];
 
         foreach ($data_list as $data) {
