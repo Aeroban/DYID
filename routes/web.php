@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +67,7 @@ Route::get('/DetailProductPage', [PagesController::class,'showDetailProductPage'
 
 Route::get('/history', [PagesController::class,'showHistory']);
 
-Route::get('/home', [ProductsController::class,'showHome']);
+Route::get('/home', [ProductsController::class,'showHome'])->name('home');
 Route::get('/search', [PagesController::class,'showSearch']);
 
 Route::get('/cart', [PagesController::class,'showCart']);
@@ -75,10 +76,4 @@ Route::get('/edit_cart', [PagesController::class,'showEditCart']);
 // Database testing
 Route::resource('/users', UsersController::class);
 
-
-
-
-
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
