@@ -43,8 +43,7 @@ use Illuminate\Support\Facades\Auth;
 //Named routes
 //Route::get('/products',[ProductsController::class, 'show_index'])->name('products');
 
-Route::get('/',[PagesController::class,'showIndex']);
-
+Route::get('/', [ProductsController::class,'showHome'])->name('home');
 Route::get('/register',[PagesController::class,'showRegister']);
 Route::get('/login', [PagesController::class,'showLogin']);
 
@@ -67,7 +66,6 @@ Route::get('/DetailProductPage', [PagesController::class,'showDetailProductPage'
 
 Route::get('/history', [PagesController::class,'showHistory']);
 
-Route::get('/home', [ProductsController::class,'showHome'])->name('home');
 Route::get('/search', [PagesController::class,'showSearch']);
 
 Route::get('/cart', [PagesController::class,'showCart']);

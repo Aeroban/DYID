@@ -1,10 +1,29 @@
 @extends('layouts/app')
 
 @section('content')
-<h1>This is a the index page</h1>
-<img src="{{ URL('images/logo.png') }}" alt="">
-<img src="{{ URL('storage/LGFHDTVSignage.png')}}" alt="">
+    <p class="title">New Products</p>
 
-{{-- asset only look in the public directory --}}
-<img src="{{ asset('storage/iphonexs.png')}}" alt="">
+    <div class="gallery">
+        @foreach($data as $product)
+        <div class="gallery-item">
+            <div class="gallery-item-top">
+                <img src="{{ asset("images/products/" . $product->image_path) }}" alt="">
+            </div>
+            <div class="gallery-item-bot">
+                <div class="gallery-item-bot-title">
+                    <p class="gallery-item-bot-title-product">{{$product->name}}</p>
+                    <p class="gallery-item-bot-title-category">{{$product->category->name}}</p>
+                </div>
+                <p class="gallery-item-bot-price"> IDR {{number_format($product->price, 0, ',')}} </p>
+                <button class="gallery-item-bot-more">More Detail</button>
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+    {{ $data->links() }}
+@endsection
+
+@section('style')
+    <link rel="stylesheet" href="{{ asset("css/home.css") }}">
 @endsection

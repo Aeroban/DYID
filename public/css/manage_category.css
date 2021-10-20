@@ -7,7 +7,13 @@ table{
     margin-right: auto;
 }
 
-.Update {
+.btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.updateBtn {
     background-color: #d9ff00;
     color: black;
     border: none;
@@ -17,9 +23,10 @@ table{
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+    font-weight: normal;
 }
 
-.Delete{
+.deleteBtn{
     background-color: #ff5100;
     color: black;
     border: none;

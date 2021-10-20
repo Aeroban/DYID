@@ -10,7 +10,7 @@ class ProductsController extends Controller
     public function showHome(){
         $data = Product::paginate(6);
         
-        return view('home', [
+        return view('index', [
             'data' => $data
         ]);
     }

@@ -7,23 +7,23 @@
 	    <col style="width:70%">
 	    <col style="width:20%">
         <tr>
-            <th scope="col">No</th>
-            <th scope="col">Category Name</th>
-            <th scope="col">Action</th>
+            <th>No</th>
+            <th>Category Name</th>
+            <th>Action</th>
         </tr>
         @foreach ($data as $category)
             <tr>
-                <th scope="row">{{$category->id}}</th>
-                <th scope="row">{{$category->name}}</th>
-                <th scope="row">
-                    <a href="/category/edit/{{$category->id}}">Update</a> 
+                <td>{{$category->id}}</th>
+                <td>{{$category->name}}</th>
+                <td class="btn">
+                    <a href="/category/edit/{{$category->id}}" class="updateBtn">Update</a> 
 
                     <form action="/category/delete/{{$category->id}}" method="POST">
                         @csrf
                         @method("delete")
-                        <button type = "submit" class="Delete">Delete</button>
+                        <button type = "submit" class="deleteBtn">Delete</button>
                     </form>
-                </th>
+                </td>
             </tr>
         @endforeach
     </table>
