@@ -8,7 +8,7 @@
     </div>
     <div class="header-bot">
         <ul>
-            <li><a href="/home">Home</a></li>
+            <li><a href="/">Home</a></li>
 
             @guest
                 <div class="header-bot-right">
