@@ -4,13 +4,13 @@
 <div class="edit">
     <div class="edit-form">
         <p>Edit Category</p>
-        <form action="/edit_category/{{$data->id}}" method="POST">
+        <form action="/category/edit/{{$data->id}}" method="POST">
             @csrf
             @method('PUT')
 
             <input type="text" name="name" id="" value="{{$data->name}}">
     
-            <button type="submit">update</button>
+            <button class="edit-form-btn" type="submit">update</button>
         </form>
     </div>
 </div>

@@ -16,9 +16,9 @@
                 <th scope="row">{{$category->id}}</th>
                 <th scope="row">{{$category->name}}</th>
                 <th scope="row">
-                    <a href="edit_category/{{$category->id}}">Update</a> 
+                    <a href="/category/edit/{{$category->id}}">Update</a> 
 
-                    <form action="delete_category/{{$category->id}}" method="POST">
+                    <form action="/category/delete/{{$category->id}}" method="POST">
                         @csrf
                         @method("delete")
                         <button type = "submit" class="Delete">Delete</button>

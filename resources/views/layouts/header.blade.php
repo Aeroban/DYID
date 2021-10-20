@@ -8,7 +8,7 @@
     </div>
     <div class="header-bot">
         <ul>
-            <li><a href="home">Home</a></li>
+            <li><a href="/home">Home</a></li>
 
             @guest
                 <div class="header-bot-right">
@@ -20,8 +20,8 @@
                     @endif
                 </div>
             @elseif(isset(Auth::user()->id) && (Auth::user()->role == 0))
-                <li><a href="cart">My Cart</a></li>
-                <li><a href="history">History Transaction</a></li>
+                <li><a href="/cart">My Cart</a></li>
+                <li><a href="/history">History Transaction</a></li>
 
                 <div class="header-bot-right">
                     <li class="header-bot-right-btn">
@@ -37,8 +37,8 @@
                     <button class="header-bot-dropdown-btn">Manage Product &#9660
                     </button>
                     <div class="header-bot-dropdown-content">
-                        <a href="view_product_list">View Product</a>
-                        <a href="insert_product">Add Product</a>
+                        <a href="/view_product_list">View Product</a>
+                        <a href="/insert_product">Add Product</a>
                     </div>
                 </div>
 
@@ -46,8 +46,8 @@
                     <button class="header-bot-dropdown-btn">Manage Category &#9660
                     </button>
                     <div class="header-bot-dropdown-content">
-                        <a href="manage_category">View Category</a>
-                        <a href="insert_category">Add Category</a>
+                        <a href="/category">View Category</a>
+                        <a href="/category/insert">Add Category</a>
                     </div>
                 </div>
 

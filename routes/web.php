@@ -54,12 +54,12 @@ Route::get('/edit_product', [PagesController::class,'showEditProduct']);
 Route::get('/testing', [PagesController::class,'showTest']);
 
 //Categories
-Route::get('/edit_category/{id}', [CategoriesController::class,'showEditCategory']);
-Route::put('/edit_category/{id}', [CategoriesController::class,'update']);
-Route::delete('/delete_category/{id}', [CategoriesController::class,'delete']);
-Route::get('/insert_category', [CategoriesController::class,'showInsertCategory']);
-Route::post('/insert_category', [CategoriesController::class,'store']);
-Route::get('/manage_category', [CategoriesController::class,'showManageCategory']);
+Route::get('/category/edit/{id}', [CategoriesController::class,'showEditCategory']);
+Route::put('/category/edit/{id}', [CategoriesController::class,'update']);
+Route::delete('/category/delete/{id}', [CategoriesController::class,'delete']);
+Route::get('/category/insert', [CategoriesController::class,'showInsertCategory']);
+Route::post('/category/insert', [CategoriesController::class,'store']);
+Route::get('/category', [CategoriesController::class,'showManageCategory']);
 
 Route::get('/view_product_list', [PagesController::class,'showViewProductList']);
 

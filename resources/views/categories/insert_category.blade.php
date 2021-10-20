@@ -4,7 +4,7 @@
 <div class="insert">
     <div class="insert-form">
         <p class="insert-form-name">Insert New Category</p>
-        <form action="/insert_category" method="POST">
+        <form action="/category/insert" method="POST">
             @csrf
 
             <input type="text" name="name" id="" placeholder="Category name">

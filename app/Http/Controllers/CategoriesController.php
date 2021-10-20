@@ -10,13 +10,13 @@ class CategoriesController extends Controller
     public function showManageCategory(){
         $data = Category::all();
 
-        return view('manage_category')->with('data',$data);
+        return view('categories.manage_category')->with('data',$data);
     }
 
     public function showEditCategory($id){
         $data = Category::find($id);
 
-        return view('edit_category')->with('data',$data);
+        return view('categories.edit_category')->with('data',$data);
     }
 
     public function update(Request $request, $id){
@@ -24,11 +24,11 @@ class CategoriesController extends Controller
             ['name' => $request->input('name')]
         );
 
-        return redirect('manage_category');
+        return redirect('category');
     }
 
     public function showInsertCategory(){
-        return view('insert_category');
+        return view('categories.insert_category');
     }
 
     public function store(Request $request){
@@ -40,12 +40,12 @@ class CategoriesController extends Controller
             'name' => $request->input('name')
         ]);
 
-        return redirect('manage_category');
+        return redirect('category');
     }
 
     public function delete($id){
         $data = Category::find($id);
         $data->delete();
-        return redirect('manage_category');
+        return redirect('category');
     }
 }
