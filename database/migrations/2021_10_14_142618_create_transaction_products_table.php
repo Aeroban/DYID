@@ -21,6 +21,8 @@ class CreateTransactionProductsTable extends Migration
 
             $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
+            $table->unique(['transaction_id', 'product_id'],'transaction_product_unique');
         });
     }
 

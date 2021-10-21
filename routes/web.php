@@ -47,10 +47,12 @@ Route::get('/', [ProductsController::class,'showHome'])->name('home');
 Route::get('/register',[PagesController::class,'showRegister']);
 Route::get('/login', [PagesController::class,'showLogin']);
 
-Route::get('/insert_product', [PagesController::class,'showInsertProduct']);
-Route::get('/edit_product', [PagesController::class,'showEditProduct']);
-
-Route::get('/testing', [PagesController::class,'showTest']);
+//Product
+Route::get('/product/insert', [ProductsController::class,'showInsertProduct']);
+Route::get('/product/edit', [ProductsController::class,'edit']);
+Route::get('/product', [ProductsController::class,'showManageProduct']);
+Route::get('/product/{id}', [ProductsController::class,'show']);
+Route::get('/search', [ProductsController::class,'search']);
 
 //Categories
 Route::get('/category/edit/{id}', [CategoriesController::class,'showEditCategory']);
@@ -60,13 +62,7 @@ Route::get('/category/insert', [CategoriesController::class,'showInsertCategory'
 Route::post('/category/insert', [CategoriesController::class,'store']);
 Route::get('/category', [CategoriesController::class,'showManageCategory']);
 
-Route::get('/view_product_list', [PagesController::class,'showViewProductList']);
-
-Route::get('/DetailProductPage', [PagesController::class,'showDetailProductPage']);
-
 Route::get('/history', [PagesController::class,'showHistory']);
-
-Route::get('/search', [PagesController::class,'showSearch']);
 
 Route::get('/cart', [PagesController::class,'showCart']);
 Route::get('/edit_cart', [PagesController::class,'showEditCart']);
@@ -75,7 +71,3 @@ Route::get('/edit_cart', [PagesController::class,'showEditCart']);
 Route::resource('/users', UsersController::class);
 
 Auth::routes();
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

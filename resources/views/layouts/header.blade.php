@@ -1,8 +1,8 @@
 <div class="header">
     <div class="header-top">
         <img src="{{ asset('/images/logo.png')}}" alt="">
-        <form action="">
-            <input type="text" placeholder=" Search product...">
+        <form action="/search" method="GET">
+            <input type="text" name="search" placeholder=" Search product...">
             <input type="submit" value="">
         </form>
     </div>

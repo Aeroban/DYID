@@ -25,5 +25,5 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset("css/home.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/search.css") }}">
 @endsection
