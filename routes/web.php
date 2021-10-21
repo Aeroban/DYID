@@ -65,7 +65,7 @@ Route::get('/category', [CategoriesController::class,'showManageCategory']);
 Route::get('/history', [PagesController::class,'showHistory']);
 
 Route::get('/cart', [PagesController::class,'showCart']);
-Route::get('/edit_cart', [PagesController::class,'showEditCart']);
+Route::get('/cart/edit', [PagesController::class,'showEditCart']);
 
 // Database testing
 Route::resource('/users', UsersController::class);

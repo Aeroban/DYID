@@ -13,10 +13,10 @@
             @guest
                 <div class="header-bot-right">
                     @if (Route::has('login'))
-                        <li class="header-bot-right-btn"><a href="login" >Login</a></li>
+                        <li class="header-bot-right-btn"><a href="/login" >Login</a></li>
                     @endif
                     @if (Route::has('register'))
-                        <li class="header-bot-right-btn"><a href="register" >Register</a></li>
+                        <li class="header-bot-right-btn"><a href="/register" >Register</a></li>
                     @endif
                 </div>
             @elseif(isset(Auth::user()->id) && (Auth::user()->role == 0))

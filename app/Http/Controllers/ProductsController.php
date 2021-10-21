@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>['showHome','show','search']]);
+    }
+
     public function showHome(){
         $data = Product::paginate(6);
         
@@ -15,7 +20,7 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function showProduct($id){
+    public function show($id){
         $data = Product::find($id);
 
         return view('products.detail_product')->with('data',$data);
@@ -27,10 +32,6 @@ class ProductsController extends Controller
 
     public function edit(){
         return view('products.edit_product');
-    }
-
-    public function show(){
-        return view('products.detail_product');
     }
 
     public function showManageProduct(){

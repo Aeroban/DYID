@@ -1,28 +1,32 @@
 @extends('layouts/app')
 
 @section('content')
-    <div class="TableForContent">
-        <div class="image">
-            <img src="{{ asset('/images/logo.png')}}" alt=""></th>
+    <div class="product">
+        <div class="product-left">
+            <img src="{{ asset('images/products/'. $data->image_path)}}" alt=""></th>
         </div>
-        <div class="textDescript">
-            <h1>Samsung s21</h1>
+        <div class="product-right">
+            <h1 class="product-right-title">{{$data->name}}</h1>
             <hr>
-            <h1>Category</h1>
-            <br>
-            smartphone
+            <h1 class="product-right-subtitle">Category:</h1>
+            <p>{{$data->category->name}}</p>
             <hr>
-            <h1>Price</h1>
-            <br>
-            ID 14.999.000
+            <h1 class="product-right-subtitle">Price:</h1>
+            <p>IDR {{number_format($data->price, 0, ',')}}</p>
             <hr>
-            <h1>Description:</h1>
-            <br>
-            Witness blablabla
+            <h1 class="product-right-subtitle">Description:</h1>
+            <p>{{$data->description}}</p>
             <hr>
-            <br>
-
-            <button class="Login">Login to buy</button>
+    
+            @guest
+                <a href="/login" class="login">Login to buy</a>
+            @elseif(isset(Auth::user()->id) && (Auth::user()->role == 0))
+                <form action="" class="product-right-form">
+                    <label for="item_quantity">Qty:</label>
+                    <input type="number">
+                    <input type="submit" value="Add To Cart">
+                </form>
+            @endguest
         </div>
     </div>
 @endsection
