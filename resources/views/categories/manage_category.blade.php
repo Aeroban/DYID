@@ -13,8 +13,8 @@
         </tr>
         @foreach ($data as $category)
             <tr>
-                <td>{{$category->id}}</th>
-                <td>{{$category->name}}</th>
+                <td>{{$category->id}}</td>
+                <td>{{$category->name}}</td>
                 <td class="btn">
                     <a href="/category/edit/{{$category->id}}" class="updateBtn">Update</a> 
 

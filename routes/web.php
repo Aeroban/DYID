@@ -75,3 +75,7 @@ Route::get('/edit_cart', [PagesController::class,'showEditCart']);
 Route::resource('/users', UsersController::class);
 
 Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
