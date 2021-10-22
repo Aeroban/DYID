@@ -55,12 +55,14 @@ Route::get('/product/{id}', [ProductsController::class,'show']);
 Route::get('/search', [ProductsController::class,'search']);
 
 //Categories
-Route::get('/category/edit/{id}', [CategoriesController::class,'showEditCategory']);
-Route::put('/category/edit/{id}', [CategoriesController::class,'update']);
-Route::delete('/category/delete/{id}', [CategoriesController::class,'delete']);
-Route::get('/category/insert', [CategoriesController::class,'showInsertCategory']);
-Route::post('/category/insert', [CategoriesController::class,'store']);
-Route::get('/category', [CategoriesController::class,'showManageCategory']);
+Route::prefix('/category')->group(function (){
+    Route::get('edit/{id}', [CategoriesController::class,'showEditCategory']);
+    Route::put('edit/{id}', [CategoriesController::class,'update']);
+    Route::delete('delete/{id}', [CategoriesController::class,'delete']);
+    Route::get('insert', [CategoriesController::class,'showInsertCategory']);
+    Route::post('insert', [CategoriesController::class,'store']);
+    Route::get('', [CategoriesController::class,'showManageCategory']);
+});
 
 Route::get('/history', [PagesController::class,'showHistory']);
 
