@@ -11,7 +11,7 @@
             <th>Category Name</th>
             <th>Action</th>
         </tr>
-        @foreach ($data as $category)
+        @forelse ($data as $category)
             <tr>
                 <td>{{$category->id}}</td>
                 <td>{{$category->name}}</td>
@@ -25,7 +25,13 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td>No data</td>
+                <td>No data</td>
+                <td>No data</td>
+            </tr>
+        @endforelse
     </table>
 @endsection
 
