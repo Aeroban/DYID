@@ -36,6 +36,7 @@
   margin: 0px;
   padding: 0px;
   background-color: #FFE74C;
+  align-items: center;
 }
 .header-bot ul {
   display: flex;

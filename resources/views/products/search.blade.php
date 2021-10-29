@@ -20,8 +20,10 @@
         </div>
         @endforeach
     </div>
-
-    {{ $data->links() }}
+    <div class="pag">
+        {{ $data->links() }}
+    </div>
+    
 @endsection
 
 @section('style')
