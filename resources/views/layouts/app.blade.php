@@ -18,7 +18,7 @@
 
     <title>DYID</title>
     <style>
-        /* We will move this to scss later */
+        /* Making sure of fullsize */
         html,body{
             width: 100%;
             height: 100%;

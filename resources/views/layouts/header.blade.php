@@ -1,7 +1,7 @@
 <div class="container-fluid" style="margin: 0px; padding:0px;">
     <nav class="navbar navbar-light" style="padding: 10px 30px; background: #0046be;">
         <div class="container-fluid">
-            <img class ="navbar-brand" src="{{ asset('/images/logo.png')}}" alt="">
+            <img class ="navbar-brand" src="{{ url('storage/images/logo.png')}}" alt="">
             <form class ="d-flex justify-content-start flex-fill" action="/search" method="GET">
                 <input class="form-control me-2" type="search" name="search" placeholder=" Search product...">
                 <button class="btn btn-warning" type="Submit">Search</button>
@@ -28,7 +28,7 @@
                         border-style: solid;
                         border-color: black;
                         border-radius: 5px;
-                        border-width: 2px;" href="/register" >Register</a>
+                        border-width: 2px;" href="/register">Register</a>
                     @endif
                 </div>
             @elseif(isset(Auth::user()->id) && (Auth::user()->role == 0))
@@ -48,7 +48,7 @@
                     border-style: solid;
                     border-color: black;
                     border-radius: 5px;
-                    border-width: 2px; padding:1px 7px;"><img src="{{ asset("images/logout.png") }}" alt="">Logout</a>
+                    border-width: 2px; padding:1px 7px;"><img src="{{ url('storage/images/logout.png')}}" alt="">Logout</a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -88,7 +88,7 @@
                     border-style: solid;
                     border-color: black;
                     border-radius: 5px;
-                    border-width: 2px; padding:1px 7px;"><img src="{{ asset("images/logout.png") }}" alt="">Logout</a>
+                    border-width: 2px; padding:1px 7px;"><img src="{{ url('storage/images/logout.png')}}" alt="">Logout</a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf

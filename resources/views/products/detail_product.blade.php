@@ -3,7 +3,7 @@
 @section('content')
     <div class="product">
         <div class="product-left">
-            <img src="{{ asset('images/products/'. $data->image_path)}}" alt=""></th>
+            <img src="{{ url('storage/images/products/'. $data->image_path)}}" alt=""></th>
         </div>
         <div class="product-right">
             <h1 class="product-right-title">{{$data->name}}</h1>
