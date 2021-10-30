@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartsController;
 use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
@@ -66,8 +67,9 @@ Route::prefix('/category')->group(function (){
 
 Route::get('/history', [PagesController::class,'showHistory']);
 
-Route::get('/cart', [PagesController::class,'showCart']);
-Route::get('/cart/edit', [PagesController::class,'showEditCart']);
+//Cart
+Route::get('/cart', [CartsController::class,'showCart']);
+Route::get('/cart/edit/{id}', [CartsController::class,'showEditCart']);
 
 // Database testing
 Route::resource('/users', UsersController::class);

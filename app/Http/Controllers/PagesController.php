@@ -22,13 +22,6 @@ class PagesController extends Controller
         return view ('history');
     }
 
-
-    public function showCart(){
-        return view('cart');
-    }
-
-    public function showEditCart(){
-        return view('edit_cart');
-    }
+    
 }
 

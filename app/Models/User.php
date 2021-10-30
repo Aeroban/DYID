@@ -45,12 +45,12 @@ class User extends Authenticatable
     ];
 
     // users 1 - 0|1 carts
-    public function cart(){
+    public function carts(){
         return $this->hasOne(Cart::class);
     }
 
     // users 1 - 0|* transactions
-    public function transaction(){
+    public function transactions(){
         return $this->hasMany(Transcation::class);
     }
 }
