@@ -50,9 +50,10 @@
 }
 
 .login{
-    background-color: #ffc400;
+    background-color: #FFE74C;
     color: black;
     border: none;
+    border-radius: 5px;
     padding: 10px 27px;
     text-align: center;
     text-decoration: none;

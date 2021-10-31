@@ -19,7 +19,7 @@
             height: 100%;
             margin: 0px;
             padding: 0px;
-            min-height: 100%;
+            min-height: 100vh;
             overflow-x:hidden;
         }
 

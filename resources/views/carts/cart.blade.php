@@ -17,8 +17,8 @@
                         <p  class="mycart-gallery-item-right-quantity">{{ $product->pivot->quantity}} pcs</p>
                         <p  class="mycart-gallery-item-right-subtotal">IDR {{number_format($product->pivot->quantity * $product->price)}}</p>
                         <div class="mycart-gallery-item-right-button">
-                            <a class="btn" style="background-color: #FFE74C; color:black; margin-right:15px;" href="/cart/edit/{{$product->id}}">Edit</a>
-                            <a class="btn" style="background-color: #ff4c4c; color:white;">Delete</a>
+                            <button class="mycart-gallery-item-right-button-edit"><a href="/cart/edit/{{$product->id}}">Edit</a></button> 
+                            <button class="mycart-gallery-item-right-button-del"><a class="">Delete</a></button>
                         </div>
                     </div>
                 </div>

@@ -86,6 +86,10 @@
   align-self: center;
   margin-right: 5px;
 }
+.mycart-gallery-item-right-button-edit a {
+  text-decoration: none;
+  color: black;
+}
 .mycart-gallery-item-right-button-del {
   background-color: #ff4c4c;
   color: white;
@@ -95,4 +99,8 @@
   border-radius: 3px;
   justify-content: center;
   align-self: center;
+}
+.mycart-gallery-item-right-button-del a {
+  text-decoration: none;
+  color: white;
 }

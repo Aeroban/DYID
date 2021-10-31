@@ -23,12 +23,7 @@
 .header-top form input[type=text] {
   width: 70vw;
   margin-left: 30px;
-}
-.header-top form input[type=submit] {
-  background-image: url(/images/search_icon.png?06aaae4d2daacad0d8f2d332522f4399);
-  border: 0;
-  height: 50px;
-  width: 50px;
+  margin-right: 15px;
 }
 
 .header-bot {

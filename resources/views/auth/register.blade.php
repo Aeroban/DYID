@@ -74,7 +74,7 @@
                     <label for="reg_agree">I agree with terms & conditions</label>
                 </div>
 
-                @error('password')
+                @error('agree')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

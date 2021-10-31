@@ -3,7 +3,7 @@
         <img src="{{ url('storage/images/logo.png')}}" alt="">
         <form action="/search" method="GET">
             <input type="text" name="search" placeholder=" Search product...">
-            <input type="submit" value="">
+            <input type="submit" value="Search">
         </form>
     </div>
     <div class="header-bot">
@@ -38,8 +38,8 @@
                     <button class="header-bot-dropdown-btn">Manage Product &#9660
                     </button>
                     <div class="header-bot-dropdown-content">
-                        <a href="/view_product_list">View Product</a>
-                        <a href="/insert_product">Add Product</a>
+                        <a href="/product">View Product</a>
+                        <a href="/product/insert">Add Product</a>
                     </div>
                 </div>
 
@@ -51,7 +51,6 @@
                         <a href="/category/insert">Add Category</a>
                     </div>
                 </div>
-                    
 
                 <div class="header-bot-right">
                     <li class="header-bot-right-btn">
