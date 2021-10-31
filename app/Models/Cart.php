@@ -9,6 +9,7 @@ class Cart extends Model
 {
     use HasFactory;
 
+    // Many - to - Many
     // (RelatedModel, pivot_table, fk_of_current_model_in_pivot_table, fk_of_other_model_in_pivot_table)
     // public function products(){
     //     return $this->belongsToMany(

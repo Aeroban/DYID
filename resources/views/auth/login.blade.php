@@ -8,7 +8,7 @@
             @csrf
 
             <div class="login-form-group">
-                <input type="email" name="email" id="" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email">
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="login-form-group">
-                <input type="password" name="password" id="" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
