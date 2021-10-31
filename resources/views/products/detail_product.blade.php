@@ -21,10 +21,16 @@
             @guest
                 <a href="/login" class="login">Login to buy</a>
             @elseif(isset(Auth::user()->id) && (Auth::user()->role == 0))
-                <form action="" class="product-right-form">
-                    <label for="item_quantity">Qty:</label>
-                    <input type="number">
+                <form action="/cart/add/{{ $data->id }}" class="product-right-form" method="POST">
+                    @csrf
+
+                    <label for="quantity">Qty:</label>
+                    <input type="number" name="quantity">
                     <input type="submit" value="Add To Cart">
+
+                    @error('quantity')
+                        <div class="alert" style="color: red" role='alert'><strong>{{$message}}</strong></div>
+                    @enderror
                 </form>
             @endguest
         </div>

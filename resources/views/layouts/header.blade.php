@@ -7,7 +7,7 @@
         </form>
     </div>
     <div class="header-bot">
-        <ul>
+        <ul style="margin-top:10px;">
             <li><a href="/">Home</a></li>
 
             @guest

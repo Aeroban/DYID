@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\CartProduct;
 use App\Models\User;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class CartsController extends Controller
@@ -64,6 +66,49 @@ class CartsController extends Controller
         $cart_item->pivot->quantity = $request->quantity;
         $cart_item->pivot->save();
 
+        return redirect('/cart');
+    }
+
+    public function create($id){
+        Cart::create([
+            'user_id' => $id
+        ]);
+    }
+
+    public function addToCart(Request $request){
+        $item_id = $request->id;
+        $user_id = auth()->user()->id;
+
+        $rules=[
+            'quantity' => 'required|numeric|min:1'
+        ];
+        $message=[
+            'required|numeric' => 'Must be filled with a number',
+            'min' => 'Quantity must be at least one'
+        ];
+
+        $this->validate($request, $rules, $message);
+
+        $user_cart = User::find($user_id)->carts;
+        $cart_item = $user_cart->products()->where('id','=',$item_id)->first();
+
+        if($cart_item == null){
+            $user_cart->products()->attach($item_id,['quantity' => $request->quantity]);
+        }else{
+            $cart_item->pivot->quantity = $cart_item->pivot->quantity + $request->quantity;
+            $cart_item->pivot->save();
+        }
+
+        return redirect('/cart');
+    }
+
+    public function destroy(Request $request){
+
+        $item_id = $request->id;
+        $user_id = auth()->user()->id;
+        $user_cart = User::find($user_id)->carts;
+
+        $user_cart->products()->detach($item_id);
         return redirect('/cart');
     }
 }

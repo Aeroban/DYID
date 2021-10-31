@@ -16,9 +16,16 @@
                         </div>
                         <p  class="mycart-gallery-item-right-quantity">{{ $product->pivot->quantity}} pcs</p>
                         <p  class="mycart-gallery-item-right-subtotal">IDR {{number_format($product->pivot->quantity * $product->price)}}</p>
+
                         <div class="mycart-gallery-item-right-button">
-                            <button class="mycart-gallery-item-right-button-edit"><a href="/cart/edit/{{$product->id}}">Edit</a></button> 
-                            <button class="mycart-gallery-item-right-button-del"><a class="">Delete</a></button>
+                            <button class="mycart-gallery-item-right-button-edit"><a href="/cart/edit/{{ $product->id }}">Edit</a></button> 
+
+                            <form action="/cart/delete/{{ $product->id }}" method="POST">
+                                @csrf
+                                @method("delete")
+
+                                <button type = "submit" class="mycart-gallery-item-right-button-del">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>

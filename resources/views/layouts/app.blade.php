@@ -32,7 +32,6 @@
             padding: 0px;
             margin: 0px;
         }
-
         .content{
             min-height: calc(100vh - 137px - 114px);
         }

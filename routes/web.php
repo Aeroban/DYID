@@ -46,6 +46,8 @@ Route::get('/history', [PagesController::class,'showHistory']);
 Route::get('/cart', [CartsController::class,'showCart']);
 Route::get('/cart/edit/{id}', [CartsController::class,'showEditCart']);
 Route::post('/cart/edit/{id}',[CartsController::class,'update']);
+Route::post('/cart/add/{id}',[CartsController::class,'addToCart']);
+Route::delete('/cart/delete/{id}',[CartsController::class,'destroy']);
 
 // Database testing
 Route::resource('/users', UsersController::class);
