@@ -70,6 +70,7 @@ Route::get('/history', [PagesController::class,'showHistory']);
 //Cart
 Route::get('/cart', [CartsController::class,'showCart']);
 Route::get('/cart/edit/{id}', [CartsController::class,'showEditCart']);
+Route::post('/cart/edit/{id}',[CartsController::class,'update']);
 
 // Database testing
 Route::resource('/users', UsersController::class);

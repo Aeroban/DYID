@@ -42,4 +42,28 @@ class CartsController extends Controller
 
         return view('carts.edit_cart')->with('cart_item',$cart_item);
     }
+
+    public function update(Request $request){
+        //Validation
+        $rules=[
+            'quantity' => 'required|numeric|min:1'
+        ];
+        $message=[
+            'required|numeric' => 'Must be filled with a number',
+            'min' => 'Quantity must be at least one'
+        ];
+
+        $this->validate($request, $rules,$message);
+
+        $item_id = $request->id;
+        $user_id = auth()->user()->id;
+
+        $user_cart = User::find($user_id)->carts;
+        $cart_item = $user_cart->products()->where('id','=',$item_id)->first();
+
+        $cart_item->pivot->quantity = $request->quantity;
+        $cart_item->pivot->save();
+
+        return redirect('/cart');
+    }
 }

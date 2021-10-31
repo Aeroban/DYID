@@ -15,10 +15,16 @@
         <p>{{$cart_item->description}}</p>
         <hr>
 
-        <form action="" class="edit_cart-right-form">
+        <form action="/cart/edit/{{$cart_item->id}}" class="edit_cart-right-form" method='POST'>
+            @csrf
+
             <label for="item_quantity">Qty:</label>
-            <input type="number" value={{$cart_item->pivot->quantity}}>
+            <input type="number" name='quantity' id='quantity' value={{$cart_item->pivot->quantity}}>
             <input type="submit" value="Save">
+
+            @error('quantity')
+                    <div class="alert" style="color: red" role='alert'><strong>{{$message}}</strong></div>
+            @enderror
         </form>
     </div>
 </div>
