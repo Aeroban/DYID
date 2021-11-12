@@ -9,15 +9,7 @@ class ProductsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',['except'=>['showHome','show','search']]);
-    }
-
-    public function showHome(){
-        $data = Product::paginate(6);
-        
-        return view('index', [
-            'data' => $data
-        ]);
+        $this->middleware('auth',['except'=>['show']]);
     }
 
     public function show($id){
@@ -36,12 +28,5 @@ class ProductsController extends Controller
 
     public function showManageProduct(){
         return view('products.manage_product');
-    }
-
-    public function search(Request $req){
-        $name = $req->input('search');
-        $data = Product::where('name','like', '%'.$name.'%')->paginate(6);
-
-        return view('products.search')->with('data', $data);
     }
 }

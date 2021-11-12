@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
@@ -19,7 +20,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [ProductsController::class,'showHome'])->name('home');
+Route::get('/', [HomeController::class,'showHome'])->name('home');
+Route::get('/search', [HomeController::class,'search']);
 Route::get('/register',[PagesController::class,'showRegister']);
 Route::get('/login', [PagesController::class,'showLogin']);
 
@@ -28,7 +30,6 @@ Route::get('/product/insert', [ProductsController::class,'showInsertProduct']);
 Route::get('/product/edit', [ProductsController::class,'edit']);
 Route::get('/product', [ProductsController::class,'showManageProduct']);
 Route::get('/product/{id}', [ProductsController::class,'show']);
-Route::get('/search', [ProductsController::class,'search']);
 
 //Categories
 Route::prefix('/category')->group(function (){
