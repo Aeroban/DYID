@@ -3,6 +3,10 @@
 
 @section('content')
 
+<div class= "transaction-header">
+    <h2>My History Transaction</h2>
+</div>
+
 
 @forelse ($user_history as $transaction_header)
     <div class="panel-group" id="accordion">
