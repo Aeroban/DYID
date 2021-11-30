@@ -9,6 +9,12 @@
             @method('PUT')
 
             <input type="text" name="name" id="" value="{{$data->name}}">
+
+            @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
     
             <button class="edit-form-btn" type="submit">update</button>
         </form>

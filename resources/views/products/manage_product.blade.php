@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-    <h1>Manage Category</h1>
+    <h1>Manage Product</h1>
     <table style="width:98%">
         <col style="width:3%">
 	    <col style="width:14%">

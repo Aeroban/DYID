@@ -36,8 +36,6 @@ Route::prefix('/product')->group(function () {
 });
 Route::get('/search', [ProductsController::class, 'search']);
 
-
-
 //Categories
 Route::prefix('/category')->group(function () {
     Route::get('edit/{id}', [CategoriesController::class, 'showEditCategory']);

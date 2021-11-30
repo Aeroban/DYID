@@ -12,7 +12,7 @@ class ProductsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['showHome', 'show', 'search']]);
+        $this->middleware('admin', ['except' => ['showHome','show','search']]);
     }
 
     public function showHome()
@@ -26,8 +26,6 @@ class ProductsController extends Controller
 
     public function show($id)
     {
-
-
         $data = Product::find($id);
 
         return view('products.detail_product')->with('data', $data);
@@ -38,14 +36,14 @@ class ProductsController extends Controller
         // this part is to show insert product page but to input the selected category
         // the same as in the database there is a need to input category data inside here   
         $category_data = Category::all();
-        $role = auth()->user()->role;
 
-
-        if ($role == 1) {
-            return view('products.insert_product')->with('category_data', $category_data);
-        } else {
-            return redirect('/');
-        }
+        return view('products.insert_product')->with('category_data', $category_data);
+        // $role = auth()->user()->role;
+        // if ($role == 1) {
+        //     return view('products.insert_product')->with('category_data', $category_data);
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function showEdit($id)
@@ -54,13 +52,14 @@ class ProductsController extends Controller
 
         $data = Product::find($id);
         $category_data = Category::all();
-        $role = auth()->user()->role;
-
-        if ($role == 1) {
-            return view('products.edit_product', compact('data', $data))->with('category_data', $category_data);
-        } else {
-            return redirect('/');
-        }
+        
+        return view('products.edit_product', compact('data', $data))->with('category_data', $category_data);
+        // $role = auth()->user()->role;
+        // if ($role == 1) {
+        //     return view('products.edit_product', compact('data', $data))->with('category_data', $category_data);
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function update($id, Request $request)
@@ -106,14 +105,13 @@ class ProductsController extends Controller
         //     ->get(['products.id', 'products.name', 'products.price', 'products.description', 'products.image_path', 'categories.name AS category']);
 
         $product = Product::all();
-
-        $role = auth()->user()->role;
-
-        if ($role == 1) {
-            return view('products.manage_product')->with('product', $product);
-        } else {
-            return redirect('/');
-        }
+        return view('products.manage_product')->with('product', $product);
+        // $role = auth()->user()->role;
+        // if ($role == 1) {
+        //     return view('products.manage_product')->with('product', $product);
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function search(Request $req)
@@ -170,7 +168,7 @@ class ProductsController extends Controller
         $product->image_path = $image_path_name;
         $product->save();
         if ($product->save()) {
-            return redirect('product');
+            return redirect('/product');
         }
     }
 }

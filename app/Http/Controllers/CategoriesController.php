@@ -10,53 +10,58 @@ class CategoriesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     public function showManageCategory()
     {
         $data = Category::all();
 
-        $role = auth()->user()->role;
+        return view('categories.manage_category')->with('data', $data);
+        // $role = auth()->user()->role;
 
-        if ($role == 1) {
-            return view('categories.manage_category')->with('data', $data);
-        } else {
-            return redirect('/');
-        }
+        // if ($role == 1) {
+        //     return view('categories.manage_category')->with('data', $data);
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function showEditCategory($id)
     {
         $data = Category::find($id);
 
-        $role = auth()->user()->role;
-
-        if ($role == 1) {
-            return view('categories.edit_category')->with('data', $data);
-        } else {
-            return redirect('/');
-        }
+        return view('categories.edit_category')->with('data', $data);
+        // $role = auth()->user()->role;
+        // if ($role == 1) {
+        //     return view('categories.edit_category')->with('data', $data);
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|unique:categories|min:2'
+        ]);
+
         $data = Category::where('id', $id)->update(
             ['name' => $request->input('name')]
         );
 
-        return redirect('category');
+        return redirect('/category');
     }
 
     public function showInsertCategory()
     {
-        $role = auth()->user()->role;
-
-        if ($role == 1) {
-            return view('categories.insert_category');
-        } else {
-            return redirect('/');
-        }
+        return view('categories.insert_category');
+        // $role = auth()->user()->role;
+        // if ($role == 1) {
+        //     return view('categories.insert_category');
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function store(Request $request)
@@ -69,13 +74,13 @@ class CategoriesController extends Controller
             'name' => $request->input('name')
         ]);
 
-        return redirect('category');
+        return redirect('/category');
     }
 
     public function delete($id)
     {
         $data = Category::find($id);
         $data->delete();
-        return redirect('category');
+        return redirect('/category');
     }
 }

@@ -6,14 +6,13 @@ use App\Models\Cart;
 use App\Models\CartProduct;
 use App\Models\Transaction;
 use App\Models\User;
-use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class CartsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('user');
     }
 
     public function showCart(){
@@ -33,12 +32,13 @@ class CartsController extends Controller
             'total_price' => $total_price
         ];
 
-        $role = auth()->user()->role;
-        if ($role == 0) {
-            return view('carts.cart',$data);
-        } else {
-            return redirect('/');
-        }
+        return view('carts.cart',$data);
+        // $role = auth()->user()->role;
+        // if ($role == 0) {
+        //     return view('carts.cart',$data);
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function showEditCart(Request $request){
@@ -48,12 +48,13 @@ class CartsController extends Controller
         $user_cart = User::find($user_id)->carts;
         $cart_item = $user_cart->products()->where('id','=',$item_id)->first();
 
-        $role = auth()->user()->role;
-        if ($role == 0) {
-            return view('carts.edit_cart')->with('cart_item',$cart_item);
-        } else {
-            return redirect('/');
-        }
+        return view('carts.edit_cart')->with('cart_item',$cart_item);
+
+        // if ($role == 0) {
+        //     return view('carts.edit_cart')->with('cart_item',$cart_item);
+        // } else {
+        //     return redirect('/');
+        // }
 
     }
 
@@ -78,12 +79,13 @@ class CartsController extends Controller
         $cart_item->pivot->quantity = $request->quantity;
         $cart_item->pivot->save();
 
-        $role = auth()->user()->role;
-        if ($role == 0) {
-            return redirect('/cart');
-        } else {
-            return redirect('/');
-        }
+        return redirect('/cart');
+        // $role = auth()->user()->role;
+        // if ($role == 0) {
+        //     return redirect('/cart');
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function create($id){
@@ -116,13 +118,13 @@ class CartsController extends Controller
             $cart_item->pivot->save();
         }
 
-        
-        $role = auth()->user()->role;
-        if ($role == 0) {
-            return redirect('/cart');
-        } else {
-            return redirect('/');
-        }
+        return redirect('/cart');
+        // $role = auth()->user()->role;
+        // if ($role == 0) {
+        //     return redirect('/cart');
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function destroy(Request $request){
@@ -133,12 +135,13 @@ class CartsController extends Controller
 
         $user_cart->products()->detach($item_id);
 
-        $role = auth()->user()->role;
-        if ($role == 0) {
-            return redirect('/cart');
-        } else {
-            return redirect('/');
-        }
+        return redirect('/cart');
+        // $role = auth()->user()->role;
+        // if ($role == 0) {
+        //     return redirect('/cart');
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function confirm(Request $request){
@@ -159,12 +162,13 @@ class CartsController extends Controller
         $old_cart = Cart::find($cart_id);
         $old_cart->products()->detach();
 
-        $role = auth()->user()->role;
-        if ($role == 0) {
-            return redirect('/history');
-        } else {
-            return redirect('/');
-        }
+        return redirect('/history');
+        // $role = auth()->user()->role;
+        // if ($role == 0) {
+        //     return redirect('/history');
+        // } else {
+        //     return redirect('/');
+        // }
 
     }
     

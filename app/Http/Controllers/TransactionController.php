@@ -10,7 +10,7 @@ class TransactionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('user');
     }
 
     public function showHistory(){
@@ -18,9 +18,7 @@ class TransactionController extends Controller
 
         $user_history = User::find($user_id)->transactions;
 
-        $holder = 0;
-
-        $data=['user_history' => $user_history, 'holder' => $holder];
+        $data=['user_history' => $user_history];
         
         return view('history',$data);
     }

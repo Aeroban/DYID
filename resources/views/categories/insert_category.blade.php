@@ -8,21 +8,15 @@
             @csrf
 
             <input type="text" name="name" id="" placeholder="Category name">
+
+            @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+
             <input type="submit" value="add">
         </form>
-
-
-        <div class="insert-form-error">
-            @if ($errors->any())
-                <div class="insert-form-error-loop">
-                    {{-- Loop over ALL errors --}}
-                    @foreach ($errors->all() as $error)
-                        <p>{{$error}}</p>
-                        <br> 
-                    @endforeach
-                </div>
-            @endif
-        </div>
     </div>
 </div>
 
