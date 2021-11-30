@@ -147,6 +147,10 @@ class CartsController extends Controller
     public function confirm(Request $request){
         $cart_id = $request->id;
         $user_id = auth()->user()->id;
+
+        if(CartProduct::where('cart_id','=',$cart_id)->get()->isEmpty()){
+            return redirect('/history');
+        }
         
         $new_transaction = new Transaction;
         $new_transaction->user_id = $user_id;
