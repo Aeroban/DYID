@@ -25,7 +25,7 @@
                             (IDR {{number_format($product->price)}})  
                         </sup>
                         <div class="peace">
-                            {{ $product->pivot->quantity}} pcs
+                            x{{ $product->pivot->quantity}} pcs
                         </div>
                     </div>
                     <div class="price">
