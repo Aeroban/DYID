@@ -3,7 +3,6 @@
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
@@ -21,7 +20,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-<<<<<<< HEAD
 Route::get('/', [ProductsController::class, 'showHome'])->name('home');
 Route::get('/register', [PagesController::class, 'showRegister']);
 Route::get('/login', [PagesController::class, 'showLogin']);
@@ -39,18 +37,6 @@ Route::prefix('/product')->group(function () {
 Route::get('/search', [ProductsController::class, 'search']);
 
 
-=======
-Route::get('/', [HomeController::class,'showHome'])->name('home');
-Route::get('/search', [HomeController::class,'search']);
-Route::get('/register',[PagesController::class,'showRegister']);
-Route::get('/login', [PagesController::class,'showLogin']);
-
-//Product
-Route::get('/product/insert', [ProductsController::class,'showInsertProduct']);
-Route::get('/product/edit', [ProductsController::class,'edit']);
-Route::get('/product', [ProductsController::class,'showManageProduct']);
-Route::get('/product/{id}', [ProductsController::class,'show']);
->>>>>>> 47e8e3c4c1dd91f46c016469818c007d5d39891a
 
 //Categories
 Route::prefix('/category')->group(function () {

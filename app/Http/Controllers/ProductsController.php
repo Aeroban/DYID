@@ -12,7 +12,6 @@ class ProductsController extends Controller
 {
     public function __construct()
     {
-<<<<<<< HEAD
         $this->middleware('auth', ['except' => ['showHome', 'show', 'search']]);
     }
 
@@ -23,9 +22,6 @@ class ProductsController extends Controller
         return view('index', [
             'data' => $data
         ]);
-=======
-        $this->middleware('auth',['except'=>['show']]);
->>>>>>> 47e8e3c4c1dd91f46c016469818c007d5d39891a
     }
 
     public function show($id)
@@ -119,7 +115,6 @@ class ProductsController extends Controller
             return redirect('/');
         }
     }
-<<<<<<< HEAD
 
     public function search(Request $req)
     {
@@ -178,6 +173,4 @@ class ProductsController extends Controller
             return redirect('product');
         }
     }
-=======
->>>>>>> 47e8e3c4c1dd91f46c016469818c007d5d39891a
 }
