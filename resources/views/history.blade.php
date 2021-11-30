@@ -26,7 +26,7 @@
                     </div>
                     <div class="price">
                         <span>
-                            IDR {{number_format($product->price)}}
+                            IDR {{number_format($product->pivot->quantity * $product->price)}}
                         </span>
                     </div>
                 </div>
