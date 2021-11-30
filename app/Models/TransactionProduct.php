@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionProduct extends Model
 {
     use HasFactory;
-
-    // public function Transaction()
-    // {
-    //     return $this->belongsToMany(Transaction::class);
-    // }
 }

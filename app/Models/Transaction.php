@@ -11,11 +11,6 @@ class Transaction extends Model
 
     protected $fillable=['user_id'];
 
-    // public function TransactionProduct()
-    // {
-    //     return $this->belongsToMany(TransactionProduct::class);
-    // }
-
     public function products(){
         return $this->belongsToMany(Product::class, 'transaction_products')
                     ->withPivot('quantity')
