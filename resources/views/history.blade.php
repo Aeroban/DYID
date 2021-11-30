@@ -18,7 +18,7 @@
                     <div class="desc">
                         {{$product->name}}  
                         <sup>
-                            (IDR {{number_format($product->price, 0, ',', ' ')}})  
+                            (IDR {{number_format($product->price)}})  
                         </sup>
                         <div class="peace">
                             {{ $product->pivot->quantity}} pcs
@@ -26,14 +26,14 @@
                     </div>
                     <div class="price">
                         <span>
-                            IDR {{number_format($product->price, 0, ',', ' ')}}
+                            IDR {{number_format($product->price)}}
                         </span>
                     </div>
                 </div>
                 @endforeach
                 <div class="totalprice">
                     <sub>
-                        <b>Total Price: IDR {{number_format($transaction_header->total_price, 0, ',', ' ')}}</b>
+                        <b>Total Price: IDR {{number_format($transaction_header->total_price)}}</b>
                     </sub>    
                 </div>
             </div>
@@ -44,39 +44,6 @@
 @empty
     <h1> No data</h1>
 @endforelse
-
-
-{{-- <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <button class="panel-heading-accordion">2021-03-25 09:16:25</button>
-        <div class="panel-heading-accordion-description">
-            <div class="table">
-                <div class="image">
-                    <img src="{{ asset('/storage/iphonex.png')}}" alt="">
-                </div>
-                <div class="desc">
-                    Iphonec XR  
-                    <sup>
-                      IDR 11.000.000  
-                    </sup>
-                    <div class="peace">
-                        X2pcs
-                    </div>
-                </div>
-                <div class="price">
-                    IDR 11.000.000
-                </div>
-            </div>
-            <div class="totalprice">
-                <sub>
-                    total price IDR 11.000.000
-                </sub>    
-            </div>
-        </div>
-      </div>
-    </div>
-</div> --}}
 
 <script type="text/javascript" src="{{ URL::asset('js/slider.js') }}"></script>
 

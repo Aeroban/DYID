@@ -14,7 +14,7 @@
                         <p class="gallery-item-bot-title-product">{{$product->name}}</p>
                         <p class="gallery-item-bot-title-category">{{$product->category->name}}</p>
                     </div>
-                    <p class="gallery-item-bot-price"> IDR {{number_format($product->price, 0, ',', ' ')}} </p>
+                    <p class="gallery-item-bot-price"> IDR {{number_format($product->price)}} </p>
                     <a class="gallery-item-bot-more" href="/product/{{$product->id}}">More Detail</a>
                 </div>
             </div>

@@ -9,7 +9,7 @@
         <h1 class="edit_cart-right-title">{{$cart_item->name}}</h1>
         <hr>
         <h1 class="edit_cart-right-subtitle">Price:</h1>
-        <p>IDR {{number_format($cart_item->price, 0, ',', '')}}</p>
+        <p>IDR {{number_format($cart_item->price)}}</p>
         <hr>
         <h1 class="edit_cart-right-subtitle">Description:</h1>
         <p>{{$cart_item->description}}</p>

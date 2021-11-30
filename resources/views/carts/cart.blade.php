@@ -14,7 +14,7 @@
                             <p class="mycart-gallery-item-right-product-name">{{$product->name}}</p>
                             <p class="mycart-gallery-item-right-product-value">IDR {{number_format($product->price)}}</p>
                         </div>
-                        <p  class="mycart-gallery-item-right-quantity">{{ $product->pivot->quantity}} pcs</p>
+                        <p  class="mycart-gallery-item-right-quantity">{{ $product->pivot->quantity }} pcs</p>
                         <p  class="mycart-gallery-item-right-subtotal">IDR {{number_format($product->pivot->quantity * $product->price)}}</p>
 
                         <div class="mycart-gallery-item-right-button">
