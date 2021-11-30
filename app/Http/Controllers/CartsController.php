@@ -155,16 +155,6 @@ class CartsController extends Controller
         foreach ($all_cart_products as $item) {
             $new_transaction->products()->attach($item->product_id,['quantity' => $item->quantity]);
         }
-        
-        // CartProduct::query()
-        // ->where('cart_id','=', $cart_id)
-        // ->each(function ($oldRecord) {
-        //     $newPost = $oldRecord->replicate();
-        //     $newPost ->setTable('transaction_products');
-        //     $newPost ->save();
-
-        //     $oldRecord->delete();
-        // });
 
         $old_cart = Cart::find($cart_id);
         $old_cart->products()->detach();
