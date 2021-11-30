@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\CartProduct;
+use App\Models\Transaction;
 use App\Models\User;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
@@ -31,8 +32,13 @@ class CartsController extends Controller
             'user_cart' => $user_cart,
             'total_price' => $total_price
         ];
-        
-        return view('carts.cart',$data);
+
+        $role = auth()->user()->role;
+        if ($role == 0) {
+            return view('carts.cart',$data);
+        } else {
+            return redirect('/');
+        }
     }
 
     public function showEditCart(Request $request){
@@ -42,7 +48,13 @@ class CartsController extends Controller
         $user_cart = User::find($user_id)->carts;
         $cart_item = $user_cart->products()->where('id','=',$item_id)->first();
 
-        return view('carts.edit_cart')->with('cart_item',$cart_item);
+        $role = auth()->user()->role;
+        if ($role == 0) {
+            return view('carts.edit_cart')->with('cart_item',$cart_item);
+        } else {
+            return redirect('/');
+        }
+
     }
 
     public function update(Request $request){
@@ -66,7 +78,12 @@ class CartsController extends Controller
         $cart_item->pivot->quantity = $request->quantity;
         $cart_item->pivot->save();
 
-        return redirect('/cart');
+        $role = auth()->user()->role;
+        if ($role == 0) {
+            return redirect('/cart');
+        } else {
+            return redirect('/');
+        }
     }
 
     public function create($id){
@@ -99,7 +116,13 @@ class CartsController extends Controller
             $cart_item->pivot->save();
         }
 
-        return redirect('/cart');
+        
+        $role = auth()->user()->role;
+        if ($role == 0) {
+            return redirect('/cart');
+        } else {
+            return redirect('/');
+        }
     }
 
     public function destroy(Request $request){
@@ -109,6 +132,48 @@ class CartsController extends Controller
         $user_cart = User::find($user_id)->carts;
 
         $user_cart->products()->detach($item_id);
-        return redirect('/cart');
+
+        $role = auth()->user()->role;
+        if ($role == 0) {
+            return redirect('/cart');
+        } else {
+            return redirect('/');
+        }
     }
+
+    public function confirm($id, $total){
+        $cart_id = $id;
+        $user_id =  auth()->user()->id;
+        $newTotal = $total;
+        
+        $transaction_newpost = new Transaction;
+        $transaction_newpost->id = $cart_id;
+        $transaction_newpost->user_id = $user_id;
+        $transaction_newpost->total_price = $newTotal;
+        $transaction_newpost->save();
+        
+        $old_data = Cart::find($id);
+        $old_data->delete();
+        
+
+
+        CartProduct::query()
+        ->where('cart_id','=', $cart_id)
+        ->each(function ($oldRecord) {
+            $newPost = $oldRecord->replicate();
+            $newPost ->setTable('transaction_products');
+            $newPost ->save();
+
+            $oldRecord->delete();
+        });
+
+        $role = auth()->user()->role;
+        if ($role == 0) {
+            return redirect('/cart');
+        } else {
+            return redirect('/');
+        }
+
+    }
+    
 }

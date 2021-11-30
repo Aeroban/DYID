@@ -15,7 +15,7 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'image'
+        'image_path'
     ];
 
     public function category(){
@@ -28,6 +28,15 @@ class Product extends Model
             'cart_products',
             'product_id',
             'cart_id'
+        );
+    }
+
+    public function transactions(){
+        return $this->belongsToMany(
+            Transaction::class,
+            'transaction_products',
+            'product_id',
+            'transaction_id'
         );
     }
 }

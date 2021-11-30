@@ -12,7 +12,7 @@
             <p>{{$data->category->name}}</p>
             <hr>
             <h1 class="product-right-subtitle">Price:</h1>
-            <p>IDR {{number_format($data->price, 0, ',')}}</p>
+            <p>IDR {{number_format($data->price, 0, ',' , ' ')}}</p>
             <hr>
             <h1 class="product-right-subtitle">Description:</h1>
             <p>{{$data->description}}</p>

@@ -61,10 +61,14 @@ margin-top: 10px;
 
 .price{
   position: relative;
-  text-align:right;
-  vertical-align:bottom;
+  width: 10rem;
   bottom: 0;
   right: 0;
+  display: flex;
+}
+
+.price span {
+  align-self: flex-end;
 }
 
 .totalprice{

@@ -3,37 +3,52 @@
 @section('content')
     <h1>Manage Category</h1>
     <table style="width:98%">
-        <col style="width:2%">
-	    <col style="width:10%">
+        <col style="width:3%">
+	    <col style="width:14%">
+        <col style="width:9%">
+        <col style="width:27%">
+        <col style="width:7%">
         <col style="width:10%">
-        <col style="width:40%">
-        <col style="width:10%">
-        <col style="width:10%">
-	    <col style="width:10%">
+	    <col style="width:20%">
         <tr>
-            <th scope="col">No</th>
-            <th scope="col">product Image</th>
-            <th scope="col">Prdouct Name</th>
-            <th scope="col">Product Description</th>
-            <th scope="col">Product Price</th>
-            <th scope="col">Product Category</th>
-            <th scope="col">Action</th>
+            <th style="width:3%">No</td>
+            <th style="width:14%">product Image</td>
+            <th style="width:9%">Prdouct Name</td>
+            <th style="width:20%">Product Description</td>
+            <th style="width:7%">Product Price</td>
+            <th style="width:10%">Product Category</td>
+            <th style="width:10%">Action</td>
         </tr>
         <tr>
-            <th scope="row">1</th>
-            <th scope="row"><img src="{{ asset('/images/logo.png')}}" alt=""></th>
-            <th scope="row">samsung 32</th>
-            <th scope="row">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat commodi reprehenderit esse animi sed, voluptas repudiandae rerum voluptates officiis aspernatur unde libero iusto ex culpa? Optio accusantium repellat quidem assumenda.</th>
-            <th scope="row">320000</th>
-            <th scope="row">Television</th>
-            <th scope="row">
+        @forelse ($product as $product)
+        <tr>
+            <td style="width:3%">{{$product->id}}</td>
+            <td style="width:14%"><img src="{{ url('storage/images/products/'. $product->image_path)}}" alt="" width="150" height="100"></td>
+            <td style="width:9%">{{$product->name}}</td>
+            <td style="width:20%">{{$product->description}}</td>
+            <td style="width:7%">{{$product->price}}</td>
+            <td style="width:10%">{{$product->category->name}}</td>
+            <td style="width:15%">
                 <div class="ButtonI">
-                    <button class="Update">Update</button>
-                    <button class="Delete">Delete</button>
+                    <a href="/product/edit/{{$product->id}}" class="Update">Update</a>
+                    <form action="/product/delete/{{$product->id}}" method="POST">
+                        @csrf
+                        @method("delete")
+                        <button type = "submit" class="Delete">Delete</button>
+                    </form>
                 </div>
                 
-            </th>
+            </td>
         </tr>
+        @empty
+            <td>No data</td>
+            <td>No data</td>
+            <td>No data</td>
+            <td>No data</td>
+            <td>No data</td>
+            <td>No data</td>
+            <td>No data</td>
+        @endforelse
     </table>
 @endsection
 

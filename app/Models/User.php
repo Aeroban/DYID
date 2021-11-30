@@ -51,6 +51,6 @@ class User extends Authenticatable
 
     // users 1 - 0|* transactions
     public function transactions(){
-        return $this->hasMany(Transcation::class);
+        return $this->hasMany(Transaction::class);
     }
 }

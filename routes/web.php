@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CartsController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
@@ -19,7 +21,27 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [ProductsController::class,'showHome'])->name('home');
+<<<<<<< HEAD
+Route::get('/', [ProductsController::class, 'showHome'])->name('home');
+Route::get('/register', [PagesController::class, 'showRegister']);
+Route::get('/login', [PagesController::class, 'showLogin']);
+
+//Product
+Route::prefix('/product')->group(function () {
+    Route::get('insert', [ProductsController::class, 'showInsertProduct']);
+    Route::post('insert', [ProductsController::class, 'store']);
+    Route::get('edit/{id}', [ProductsController::class, 'showEdit']);
+    Route::put('edit/{id}', [ProductsController::class, 'update']);
+    Route::delete('delete/{id}', [ProductsController::class, 'delete']);
+    Route::get('', [ProductsController::class, 'showManageProduct']);
+    Route::get('{id}', [ProductsController::class, 'show']);
+});
+Route::get('/search', [ProductsController::class, 'search']);
+
+
+=======
+Route::get('/', [HomeController::class,'showHome'])->name('home');
+Route::get('/search', [HomeController::class,'search']);
 Route::get('/register',[PagesController::class,'showRegister']);
 Route::get('/login', [PagesController::class,'showLogin']);
 
@@ -28,26 +50,27 @@ Route::get('/product/insert', [ProductsController::class,'showInsertProduct']);
 Route::get('/product/edit', [ProductsController::class,'edit']);
 Route::get('/product', [ProductsController::class,'showManageProduct']);
 Route::get('/product/{id}', [ProductsController::class,'show']);
-Route::get('/search', [ProductsController::class,'search']);
+>>>>>>> 47e8e3c4c1dd91f46c016469818c007d5d39891a
 
 //Categories
-Route::prefix('/category')->group(function (){
-    Route::get('edit/{id}', [CategoriesController::class,'showEditCategory']);
-    Route::put('edit/{id}', [CategoriesController::class,'update']);
-    Route::delete('delete/{id}', [CategoriesController::class,'delete']);
-    Route::get('insert', [CategoriesController::class,'showInsertCategory']);
-    Route::post('insert', [CategoriesController::class,'store']);
-    Route::get('', [CategoriesController::class,'showManageCategory']);
+Route::prefix('/category')->group(function () {
+    Route::get('edit/{id}', [CategoriesController::class, 'showEditCategory']);
+    Route::put('edit/{id}', [CategoriesController::class, 'update']);
+    Route::delete('delete/{id}', [CategoriesController::class, 'delete']);
+    Route::get('insert', [CategoriesController::class, 'showInsertCategory']);
+    Route::post('insert', [CategoriesController::class, 'store']);
+    Route::get('', [CategoriesController::class, 'showManageCategory']);
 });
 
-Route::get('/history', [PagesController::class,'showHistory']);
+Route::get('/history', [TransactionController::class, 'showHistory']);
 
 //Cart
-Route::get('/cart', [CartsController::class,'showCart']);
-Route::get('/cart/edit/{id}', [CartsController::class,'showEditCart']);
-Route::post('/cart/edit/{id}',[CartsController::class,'update']);
-Route::post('/cart/add/{id}',[CartsController::class,'addToCart']);
-Route::delete('/cart/delete/{id}',[CartsController::class,'destroy']);
+Route::get('/cart', [CartsController::class, 'showCart']);
+Route::get('/cart/edit/{id}', [CartsController::class, 'showEditCart']);
+Route::post('/cart/edit/{id}', [CartsController::class, 'update']);
+Route::post('/cart/add/{id}', [CartsController::class, 'addToCart']);
+Route::delete('/cart/delete/{id}', [CartsController::class, 'destroy']);
+Route::get('/cart/checkout/{id}/{total}', [CartsController::class, 'confirm']);
 
 // Database testing
 Route::resource('/users', UsersController::class);

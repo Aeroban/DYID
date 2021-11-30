@@ -4,23 +4,58 @@
 <div class="edit_product">
     <div class="edit_product-form">
         <p>Edit Product</p>
-        <form action="">
-            <input type="text" name="" id="" placeholder="Product Name">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Product Description"></textarea>
-            <input type="number" name="" id="" placeholder="Price">
+        <form action="/product/edit/{{$data->id}}" enctype="multipart/form-data" method="POST" >
+            {{ csrf_field() }}
+            @method('PUT')
 
+            <input type="text" name="name" id="name" value="{{$data->name}}">
+
+            @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+
+            <textarea name="description" id="description" cols="30" rows="10">{{$data->description}}</textarea>
+
+            @error('description')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+
+            <input type="text" name="price" id="" value="{{$data->price}}">
+
+            @error('price')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            
             <label for="product_category">Product Category</label>
             <select name="product_category", id="product_category">
-                <option value="">Choose One</option>
-                <option value="Television">Television</option>
-                <option value="Smartphone">Smartphone</option>
+                <option value="option_select" disabled selected>Choose One</option>
+                @foreach ($category_data as $Category) 
+                <option value="{{ $Category->id }}">  
+                    {{ $Category->name }}  
+                </option> 
+                @endforeach 
             </select>
+            @error('product_category')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
 
             <label for="product_img">Product Image</label>
-            <input type="file" name="product_category" id="product_img" accept=".jpg"/>
-            <p>Image saved: </p>
+            <input type="file" name="image_path" id="image_path" accept=".jpg"/>
+            @error('image_path')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             
-            <input type="submit" value="Save">
+            <input type="submit" value="Update">
         </form>
     </div>
     

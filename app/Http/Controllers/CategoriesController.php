@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+
 class CategoriesController extends Controller
 {
     public function __construct()
@@ -12,19 +13,34 @@ class CategoriesController extends Controller
         $this->middleware('auth');
     }
 
-    public function showManageCategory(){
+    public function showManageCategory()
+    {
         $data = Category::all();
 
-        return view('categories.manage_category')->with('data',$data);
+        $role = auth()->user()->role;
+
+        if ($role == 1) {
+            return view('categories.manage_category')->with('data', $data);
+        } else {
+            return redirect('/');
+        }
     }
 
-    public function showEditCategory($id){
+    public function showEditCategory($id)
+    {
         $data = Category::find($id);
 
-        return view('categories.edit_category')->with('data',$data);
+        $role = auth()->user()->role;
+
+        if ($role == 1) {
+            return view('categories.edit_category')->with('data', $data);
+        } else {
+            return redirect('/');
+        }
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $data = Category::where('id', $id)->update(
             ['name' => $request->input('name')]
         );
@@ -32,11 +48,19 @@ class CategoriesController extends Controller
         return redirect('category');
     }
 
-    public function showInsertCategory(){
-        return view('categories.insert_category');
+    public function showInsertCategory()
+    {
+        $role = auth()->user()->role;
+
+        if ($role == 1) {
+            return view('categories.insert_category');
+        } else {
+            return redirect('/');
+        }
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'name' => 'required|unique:categories|min:2'
         ]);
@@ -48,7 +72,8 @@ class CategoriesController extends Controller
         return redirect('category');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $data = Category::find($id);
         $data->delete();
         return redirect('category');

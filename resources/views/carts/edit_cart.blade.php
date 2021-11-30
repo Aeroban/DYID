@@ -3,13 +3,13 @@
 @section('content')
 <div class="edit_cart">
     <div class="edit_cart-left">
-        <img src="{{ url('storage/images/products/'.$cart_item->image_path) }}" alt=""></th>
+        <img src="{{ url('storage/images/products/'. $cart_item->image_path)}}" alt=""></th>
     </div>
     <div class="edit_cart-right">
         <h1 class="edit_cart-right-title">{{$cart_item->name}}</h1>
         <hr>
         <h1 class="edit_cart-right-subtitle">Price:</h1>
-        <p>IDR {{number_format($cart_item->price, 0, ',')}}</p>
+        <p>IDR {{number_format($cart_item->price, 0, ',', '')}}</p>
         <hr>
         <h1 class="edit_cart-right-subtitle">Description:</h1>
         <p>{{$cart_item->description}}</p>
