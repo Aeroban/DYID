@@ -141,35 +141,37 @@ class CartsController extends Controller
         }
     }
 
-    public function confirm($id, $total){
-        $cart_id = $id;
-        $user_id =  auth()->user()->id;
-        $newTotal = $total;
+    public function confirm(Request $request){
+        $cart_id = $request->id;
+        $user_id = auth()->user()->id;
         
-        $transaction_newpost = new Transaction;
-        $transaction_newpost->id = $cart_id;
-        $transaction_newpost->user_id = $user_id;
-        $transaction_newpost->total_price = $newTotal;
-        $transaction_newpost->save();
+        $new_transaction = new Transaction;
+        $new_transaction->user_id = $user_id;
+        $new_transaction->total_price = $request->total_price;
+        $new_transaction->save();
+
+        $all_cart_products = CartProduct::where('cart_id','=',$cart_id)->get();
+
+        foreach ($all_cart_products as $item) {
+            $new_transaction->products()->attach($item->product_id,['quantity' => $item->quantity]);
+        }
         
-        $old_data = Cart::find($id);
-        $old_data->delete();
-        
+        // CartProduct::query()
+        // ->where('cart_id','=', $cart_id)
+        // ->each(function ($oldRecord) {
+        //     $newPost = $oldRecord->replicate();
+        //     $newPost ->setTable('transaction_products');
+        //     $newPost ->save();
 
+        //     $oldRecord->delete();
+        // });
 
-        CartProduct::query()
-        ->where('cart_id','=', $cart_id)
-        ->each(function ($oldRecord) {
-            $newPost = $oldRecord->replicate();
-            $newPost ->setTable('transaction_products');
-            $newPost ->save();
-
-            $oldRecord->delete();
-        });
+        $old_cart = Cart::find($cart_id);
+        $old_cart->products()->detach();
 
         $role = auth()->user()->role;
         if ($role == 0) {
-            return redirect('/cart');
+            return redirect('/history');
         } else {
             return redirect('/');
         }

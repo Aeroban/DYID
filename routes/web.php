@@ -56,7 +56,7 @@ Route::get('/cart/edit/{id}', [CartsController::class, 'showEditCart']);
 Route::post('/cart/edit/{id}', [CartsController::class, 'update']);
 Route::post('/cart/add/{id}', [CartsController::class, 'addToCart']);
 Route::delete('/cart/delete/{id}', [CartsController::class, 'destroy']);
-Route::get('/cart/checkout/{id}/{total}', [CartsController::class, 'confirm']);
+Route::post('/cart/checkout/{id}', [CartsController::class, 'confirm']);
 
 // Database testing
 Route::resource('/users', UsersController::class);
