@@ -7,7 +7,7 @@
         @forelse($data as $product)
             <div class="gallery-item">
                 <div class="gallery-item-top">
-                    <img src="{{ asset("images/products/" . $product->image_path) }}" alt="">
+                    <img src="{{ asset("storage/images/products/" . $product->image_path) }}" alt="">
                 </div>
                 <div class="gallery-item-bot">
                     <div class="gallery-item-bot-title">
