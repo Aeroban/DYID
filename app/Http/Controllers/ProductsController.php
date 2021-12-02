@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
-
-
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -68,23 +67,20 @@ class ProductsController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:products|min:5',
             'description' => 'required|min:50',
-            'price' => 'required|numeric|min:0|not_in:0',
+            'price' => 'required|numeric|min:1|not_in:0',
             'product_category' => 'required',
-            'image_path' => 'required|image|mimes:jpeg'
+            'image_path' => 'required|image|mimes:jpg'
         ]);
         $product = Product::find($id);
         $image_path = $request->file('image_path');
         $image_name = $image_path->getClientOriginalName();
-        $destinationPath = public_path() . '/storage/images/products';
-        $image_path_name = time() . '.' . $image_name;
-        $image_path->move($destinationPath, $image_path_name);
-
+        Storage::putFileAs('public/images/products',$image_path,$image_name);
 
         $product->category_id = $request->product_category;
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->image_path = $image_path_name;
+        $product->image_path = $image_name;
 
         if ($product->update()) {
             return redirect('product');
@@ -137,9 +133,9 @@ class ProductsController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:products|min:5',
             'description' => 'required|min:50',
-            'price' => 'required|numeric|min:0|not_in:0',
+            'price' => 'required|numeric|min:1|not_in:0',
             'product_category' => 'required',
-            'image_path' => 'required|image|mimes:jpeg'
+            'image_path' => 'required|image|mimes:jpg'
         ]);
 
         //making an object for product
@@ -151,21 +147,15 @@ class ProductsController extends Controller
         //getting the original name of the file
         $image_name = $image_path->getClientOriginalName();
 
-        //destination to the public->storage->images->products file
-        $destinationPath = public_path() . '/storage/images/products';
-
-        // making sure that there will be no duplicate image when saving the image
-        $image_path_name = time() . '.' . $image_name;
-        
-        //moving the image to the local storage
-        $image_path->move($destinationPath, $image_path_name);
+        //save to storage
+        Storage::putFileAs('public/images/products',$image_path,$image_name);
 
         //saving the form into the database
         $product->category_id = $request->product_category;
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->image_path = $image_path_name;
+        $product->image_path = $image_name;
         $product->save();
         if ($product->save()) {
             return redirect('/product');
