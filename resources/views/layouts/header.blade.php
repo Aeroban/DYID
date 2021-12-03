@@ -1,6 +1,6 @@
 <div class="header">
     <div class="header-top">
-        <img src="{{ url('storage/images/icons/logo.png')}}" alt="">
+        <img src="{{ url('storage/images/icons/logo.png') }}" alt="">
         <form action="/search" method="GET">
             <input type="text" name="search" placeholder=" Search product...">
             <input type="submit" value="Search">
@@ -25,7 +25,7 @@
 
                 <div class="header-bot-right">
                     <li class="header-bot-right-btn">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="{{ url('storage/images/icons/logout.png')}}" alt="">Logout</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="{{ url('storage/images/icons/logout.png') }}" alt="">Logout</a>
                     </li>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -54,7 +54,7 @@
 
                 <div class="header-bot-right">
                     <li class="header-bot-right-btn">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="{{ url('storage/images/icons/logout.png')}}" alt="">Logout</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="{{ url('storage/images/icons/logout.png') }}" alt="">Logout</a>
                     </li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
