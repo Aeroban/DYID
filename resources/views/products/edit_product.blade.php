@@ -34,11 +34,13 @@
             
             <label for="product_category">Product Category</label>
             <select name="product_category", id="product_category">
-                <option value="option_select" disabled selected>Choose One</option>
-                @foreach ($category_data as $Category) 
-                <option value="{{ $Category->id }}">  
+                <option value="{{$data->category_id}}">{{$data->category->name}}</option>
+                @foreach ($category_data as $Category)
+                @if ($Category->id != $data->category->id)
+                    <option value="{{ $Category->id }}">  
                     {{ $Category->name }}  
-                </option> 
+                    </option>
+                @endif 
                 @endforeach 
             </select>
             @error('product_category')
@@ -49,6 +51,7 @@
 
             <label for="product_img">Product Image</label>
             <input type="file" name="image_path" id="image_path" accept=".jpg"/>
+            <p>Old File: {{$data->image_path}}</p>
             @error('image_path')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
