@@ -23,7 +23,7 @@
         @forelse ($product as $product)
         <tr>
             <td style="width:3%">{{$product->id}}</td>
-            <td style="width:14%"><img src="{{ url('storage/images/products/'. $product->image_path)}}" alt="" width="150" height="100"></td>
+            <td style="width:14%"><img src="{{ url('storage/images/products/'. $product->image_path)}}"></td>
             <td style="width:9%">{{$product->name}}</td>
             <td style="width:20%">{{$product->description}}</td>
             <td style="width:7%">{{$product->price}}</td>

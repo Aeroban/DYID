@@ -45,7 +45,7 @@
   padding: 15px;
 }
 .mycart-gallery-item-left img {
-  width: 100%;
+  max-width: 100%;
 }
 .mycart-gallery-item-right {
   display: flex;

@@ -22,6 +22,10 @@ td{
     word-wrap: break-word;
 }
 
+td img{
+    max-width: 100%;
+}
+
 table td{
     margin-left: auto;
     margin-right: auto;
