@@ -41,7 +41,7 @@
             <form action="/cart/checkout/{{ $user_cart->id }}" method="POST">
                 @csrf
                 <input type="hidden" id="total_price" name="total_price" value={{$total_price}}>
-                <button>Checkout({{$user_cart->products->sum('pivot.quantity')}})</button>
+                <button type="submit">Checkout({{$user_cart->products->sum('pivot.quantity')}})</button>
             </form>
         </div>
    </div>

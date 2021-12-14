@@ -1,8 +1,14 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
 .product {
     display: flex;
     margin: 15px 30px 15px 30px;
     background-color: white;
     height: calc(100% - 30px);
+    max-width: 1200px;
 }
 .product-left {
     width: 45%;

@@ -1,6 +1,8 @@
 @extends('layouts/app')
 
 @section('content')
+
+<div class="container">
     <div class="product">
         <div class="product-left">
             <img src="{{ url('storage/images/products/'. $data->image_path)}}" alt=""></th>
@@ -35,6 +37,8 @@
             @endguest
         </div>
     </div>
+</div>
+    
 @endsection
 
 
