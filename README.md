@@ -27,3 +27,14 @@ DYID is an e-commerce website that sells various electronic devices. This projec
 * Composer (latest version)
 * Node.js (latest version)
 * XAMPP (latest version)
+
+2. Pull the project
+3. Start up XAMPP Apache & MySQL
+4. Open the cmd and enter 'composer install'
+5. Create a .env file that matches with the environment (including the DB) that you are using
+6. Create a database in XAMPP MySQL to contain DYID data
+7. Run the command 'php artisan migrate --seed' in order to migrate the data into the DB
+8. Run the command 'php artisan storage:link' to create a symbolic link in from /public/storage to storage/app/public
+9. Add images folder (inside the Asset folder) into /public/storage folder in the project
+10. Run the command 'php artisan serve' in the cmd and ctrl + click on the link
+*The dummy users credentials can be found in databse/seeders/UserSeeder.php
