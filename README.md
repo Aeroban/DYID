@@ -16,7 +16,7 @@ DYID is an e-commerce website that sells various electronic devices. This projec
 * Forms
 
 ## ERD
-![DYID DB](https://user-images.githubusercontent.com/75673604/169246117-b608d0c4-8ffd-4c3f-a81d-66bcfac26583.jpg)
+![DYID ERD](https://user-images.githubusercontent.com/75673604/170701569-86ea23ee-0b2a-4f3f-b0f6-cc757c5c7bc5.jpg)
 
 ## Screen shots
 ![1](https://user-images.githubusercontent.com/75673604/169240543-a961f21b-2143-45f3-9fa8-9f54d70dcc99.png)
