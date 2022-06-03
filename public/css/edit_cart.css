@@ -8,10 +8,12 @@
   display: flex;
   margin: 15px 30px 15px 30px;
   background-color: white;
-  height: 70vh;
+  min-height: 70vh;
   width: 80vw;
 }
 .edit_cart-left {
+  display: flex;
+  align-items: center;
   width: 45%;
 }
 .edit_cart-left img {
